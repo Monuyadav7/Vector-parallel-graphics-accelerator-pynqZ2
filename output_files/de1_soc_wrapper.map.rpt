@@ -1,0 +1,1012 @@
+Analysis & Synthesis report for de1_soc_wrapper
+Thu Sep 24 11:19:00 2020
+Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Registers Packed Into Inferred Megafunctions
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_efn1:auto_generated
+ 15. Source assignments for arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0|altsyncram_nms1:auto_generated
+ 16. Parameter Settings for User Entity Instance: arm_soc:soc_inst|ahb_interconnect:interconnect_1
+ 17. Parameter Settings for User Entity Instance: arm_soc:soc_inst|ahb_ram:ram_1
+ 18. Parameter Settings for Inferred Entity Instance: arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0
+ 19. Parameter Settings for Inferred Entity Instance: arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0
+ 20. altsyncram Parameter Settings by Entity Instance
+ 21. Port Connectivity Checks: "razzle:raz_inst"
+ 22. Port Connectivity Checks: "arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic"
+ 23. Port Connectivity Checks: "arm_soc:soc_inst|CORTEXM0DS:m0_1"
+ 24. Port Connectivity Checks: "arm_soc:soc_inst"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+ 28. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu Sep 24 11:19:00 2020           ;
+; Quartus Prime Version           ; 16.1.2 Build 203 01/18/2017 SJ Standard Edition ;
+; Revision Name                   ; de1_soc_wrapper                                 ;
+; Top-level Entity Name           ; de1_soc_wrapper                                 ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 950                                             ;
+; Total pins                      ; 81                                              ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 438,272                                         ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; de1_soc_wrapper    ; de1_soc_wrapper    ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                               ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization During Synthesis                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 24          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processor 9            ;   0.0%      ;
+;     Processor 10           ;   0.0%      ;
+;     Processor 11           ;   0.0%      ;
+;     Processor 12           ;   0.0%      ;
+;     Processor 13           ;   0.0%      ;
+;     Processor 14           ;   0.0%      ;
+;     Processors 15-16       ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                 ;
++--------------------------------------------------+-----------------+-------------------------------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                 ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                    ; Library ;
++--------------------------------------------------+-----------------+-------------------------------------------------------+---------------------------------------------------------------------------------+---------+
+; behavioural/razzle.sv                            ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/razzle.sv                            ;         ;
+; behavioural/ahb_interconnect.sv                  ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/ahb_interconnect.sv                  ;         ;
+; behavioural/ahb_pixel_memory.sv                  ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/ahb_pixel_memory.sv                  ;         ;
+; behavioural/ahb_ram.sv                           ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/ahb_ram.sv                           ;         ;
+; behavioural/ahb_switches.sv                      ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/ahb_switches.sv                      ;         ;
+; behavioural/arm_soc.sv                           ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/arm_soc.sv                           ;         ;
+; behavioural/CORTEXM0DS.sv                        ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/CORTEXM0DS.sv                        ;         ;
+; behavioural/cortexm0ds_logic.sv                  ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/cortexm0ds_logic.sv                  ;         ;
+; behavioural/de1_soc_wrapper.sv                   ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv                   ;         ;
+; behavioural/code.hex                             ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; /home/ks6n19/Documents/project/behavioural/code.hex                             ;         ;
+; altsyncram.tdf                                   ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/altsyncram.tdf              ;         ;
+; stratix_ram_block.inc                            ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/stratix_ram_block.inc       ;         ;
+; lpm_mux.inc                                      ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/lpm_mux.inc                 ;         ;
+; lpm_decode.inc                                   ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/lpm_decode.inc              ;         ;
+; aglobal161.inc                                   ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/aglobal161.inc              ;         ;
+; a_rdenreg.inc                                    ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/a_rdenreg.inc               ;         ;
+; altrom.inc                                       ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/altrom.inc                  ;         ;
+; altram.inc                                       ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/altram.inc                  ;         ;
+; altdpram.inc                                     ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/altdpram.inc                ;         ;
+; db/altsyncram_efn1.tdf                           ; yes             ; Auto-Generated Megafunction                           ; /home/ks6n19/Documents/project/db/altsyncram_efn1.tdf                           ;         ;
+; db/decode_3na.tdf                                ; yes             ; Auto-Generated Megafunction                           ; /home/ks6n19/Documents/project/db/decode_3na.tdf                                ;         ;
+; db/mux_chb.tdf                                   ; yes             ; Auto-Generated Megafunction                           ; /home/ks6n19/Documents/project/db/mux_chb.tdf                                   ;         ;
+; db/altsyncram_nms1.tdf                           ; yes             ; Auto-Generated Megafunction                           ; /home/ks6n19/Documents/project/db/altsyncram_nms1.tdf                           ;         ;
+; db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/ks6n19/Documents/project/db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif ;         ;
++--------------------------------------------------+-----------------+-------------------------------------------------------+---------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 2146           ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 3174           ;
+;     -- 7 input functions                    ; 36             ;
+;     -- 6 input functions                    ; 1022           ;
+;     -- 5 input functions                    ; 744            ;
+;     -- 4 input functions                    ; 688            ;
+;     -- <=3 input functions                  ; 684            ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 950            ;
+;                                             ;                ;
+; I/O pins                                    ; 81             ;
+; Total MLAB memory bits                      ; 0              ;
+; Total block memory bits                     ; 438272         ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 1020           ;
+; Total fan-out                               ; 19817          ;
+; Average fan-out                             ; 4.55           ;
++---------------------------------------------+----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                               ; Entity Name      ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+; |de1_soc_wrapper                             ; 3174 (27)           ; 950 (28)                  ; 438272            ; 0          ; 81   ; 0            ; |de1_soc_wrapper                                                                                                                  ; de1_soc_wrapper  ; work         ;
+;    |arm_soc:soc_inst|                        ; 3087 (0)            ; 896 (0)                   ; 438272            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst                                                                                                 ; arm_soc          ; work         ;
+;       |CORTEXM0DS:m0_1|                      ; 2912 (0)            ; 822 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|CORTEXM0DS:m0_1                                                                                 ; CORTEXM0DS       ; work         ;
+;          |cortexm0ds_logic:u_logic|          ; 2912 (2912)         ; 822 (822)                 ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic                                                        ; cortexm0ds_logic ; work         ;
+;       |ahb_interconnect:interconnect_1|      ; 43 (43)             ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1                                                                 ; ahb_interconnect ; work         ;
+;       |ahb_pixel_memory:pix1|                ; 69 (13)             ; 26 (20)                   ; 307200            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1                                                                           ; ahb_pixel_memory ; work         ;
+;          |altsyncram:memory_rtl_0|           ; 56 (0)              ; 6 (0)                     ; 307200            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0                                                   ; altsyncram       ; work         ;
+;             |altsyncram_efn1:auto_generated| ; 56 (0)              ; 6 (6)                     ; 307200            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_efn1:auto_generated                    ; altsyncram_efn1  ; work         ;
+;                |decode_3na:decode2|          ; 45 (45)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_efn1:auto_generated|decode_3na:decode2 ; decode_3na       ; work         ;
+;                |mux_chb:mux3|                ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_efn1:auto_generated|mux_chb:mux3       ; mux_chb          ; work         ;
+;       |ahb_ram:ram_1|                        ; 52 (52)             ; 18 (18)                   ; 131072            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1                                                                                   ; ahb_ram          ; work         ;
+;          |altsyncram:memory_rtl_0|           ; 0 (0)               ; 0 (0)                     ; 131072            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0                                                           ; altsyncram       ; work         ;
+;             |altsyncram_nms1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 131072            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0|altsyncram_nms1:auto_generated                            ; altsyncram_nms1  ; work         ;
+;       |ahb_switches:switches_1|              ; 11 (11)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_switches:switches_1                                                                         ; ahb_switches     ; work         ;
+;    |razzle:raz_inst|                         ; 60 (60)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|razzle:raz_inst                                                                                                  ; razzle           ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                           ;
++----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------------------------------------------+
+; Name                                                                                                     ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                                              ;
++----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------------------------------------------+
+; arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_efn1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 307200       ; 1            ; 307200       ; 1            ; 307200 ; None                                             ;
+; arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0|altsyncram_nms1:auto_generated|ALTSYNCRAM         ; AUTO ; Simple Dual Port ; 4096         ; 32           ; 4096         ; 32           ; 131072 ; db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif ;
++----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                        ;
++------------------------------------------------------------------+----------------------------------------+
+; Register name                                                    ; Reason for Removal                     ;
++------------------------------------------------------------------+----------------------------------------+
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[0][15]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[0][14]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[0][13]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[0][12]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[0][11]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[0][10]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[1][15]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[1][14]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[1][13]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[1][12]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[1][11]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[1][10]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Zqb3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|E9c3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Yvb3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Qsb3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Rnb3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|W5c3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|O2c3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Gzb3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|C7f3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Q0f3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Qnn2z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Jje3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|W8r2z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Etq2z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Q4h3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|I6h3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Mvi2z4 ; Lost fanout                            ;
+; razzle:raz_inst|clock_enable                                     ; Merged with tick_count[0]              ;
+; Total Number of Removed Registers = 30                           ;                                        ;
++------------------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 950   ;
+; Number of registers using Synchronous Clear  ; 42    ;
+; Number of registers using Synchronous Load   ; 11    ;
+; Number of registers using Asynchronous Clear ; 942   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 689   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------+
+; Inverted Register Statistics                                               ;
++------------------------------------------------------------------+---------+
+; Inverted Register                                                ; Fan out ;
++------------------------------------------------------------------+---------+
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|O5t2z4 ; 123     ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|G0w2z4 ; 23      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|R1w2z4 ; 32      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|H9i2z4 ; 61      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Hyy2z4 ; 59      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Qdj2z4 ; 28      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|U2x2z4 ; 62      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Zoy2z4 ; 40      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Nqy2z4 ; 44      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Xly2z4 ; 16      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Lny2z4 ; 21      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Omk2z4 ; 5       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|J0l2z4 ; 5       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Jux2z4 ; 5       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Vvx2z4 ; 5       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Swy2z4 ; 67      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Qem2z4 ; 44      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Bsy2z4 ; 51      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Pty2z4 ; 45      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Dvy2z4 ; 54      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Viy2z4 ; 13      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Yzi2z4 ; 15      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Rxl2z4 ; 14      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Jky2z4 ; 22      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|W7z2z4 ; 8       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|K9z2z4 ; 7       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|I6z2z4 ; 10      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Cyq2z4 ; 22      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Auk2z4 ; 11      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|K1z2z4 ; 11      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|C3z2z4 ; 13      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|I2t2z4 ; 15      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Wai2z4 ; 16      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Igi2z4 ; 4       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Pdi2z4 ; 73      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Jw73z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|T1d3z4 ; 188     ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|H3d3z4 ; 189     ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Svk2z4 ; 205     ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Yaz2z4 ; 205     ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Art2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|J0v2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Kiq2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Ql13z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Gfq2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|I443z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Zu23z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Rd53z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Vgq2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Hak2z4 ; 4       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Skh3z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Djh3z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|M1j2z4 ; 53      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Hmh3z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Wnh3z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|An63z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Yx83z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Fgm2z4 ; 228     ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Wzy2z4 ; 239     ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Rni2z4 ; 229     ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Sjj2z4 ; 241     ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|S8k2z4 ; 4       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Fzl2z4 ; 17      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|U4z2z4 ; 4       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Qi03z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Ug63z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Fwj2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Txj2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Dq73z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Ruj2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Ukt2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Dtj2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Duu2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Wlz2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Cy33z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|L753z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Kf13z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|To23z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Iwp2z4 ; 4       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Qzq2z4 ; 20      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Zcn2z4 ; 15      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Qz33z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Z853z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Yg13z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Hq23z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Ii63z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Skm2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Gmm2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Unm2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Rr73z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Imt2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Ejm2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Rvu2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Ek03z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Knz2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Kw63z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|E1r2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Ka93z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|T583z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|G4r2z4 ; 2       ;
+; Total number of inverted registers = 704*                        ;         ;
++------------------------------------------------------------------+---------+
+* Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                        ;
++--------------------------------------------------------+-----------------------------------------------------+------+
+; Register Name                                          ; Megafunction                                        ; Type ;
++--------------------------------------------------------+-----------------------------------------------------+------+
+; arm_soc:soc_inst|ahb_pixel_memory:pix1|pixel           ; arm_soc:soc_inst|ahb_pixel_memory:pix1|memory_rtl_0 ; RAM  ;
+; arm_soc:soc_inst|ahb_ram:ram_1|data_from_memory[0..31] ; arm_soc:soc_inst|ahb_ram:ram_1|memory_rtl_0         ; RAM  ;
++--------------------------------------------------------+-----------------------------------------------------+------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|data_to_memory[7]            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|data_to_memory[13]           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|data_to_memory[16]           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|data_to_memory[31]           ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|razzle:raz_inst|V_count                                     ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[11] ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[29] ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[8]  ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[24] ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[7]  ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[20] ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 10 LEs               ; 2 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[1]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Source assignments for arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_efn1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                     ;
++---------------------------------+--------------------+------+--------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                      ;
++---------------------------------+--------------------+------+--------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Source assignments for arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0|altsyncram_nms1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                             ;
++---------------------------------+--------------------+------+------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                              ;
++---------------------------------+--------------------+------+------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arm_soc:soc_inst|ahb_interconnect:interconnect_1 ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; num_slaves     ; 3     ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arm_soc:soc_inst|ahb_ram:ram_1 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; MEMWIDTH       ; 14    ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0 ;
++------------------------------------+----------------------+-----------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                ;
++------------------------------------+----------------------+-----------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                             ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                             ;
+; WIDTH_A                            ; 1                    ; Untyped                                             ;
+; WIDTHAD_A                          ; 19                   ; Untyped                                             ;
+; NUMWORDS_A                         ; 307200               ; Untyped                                             ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; WIDTH_B                            ; 1                    ; Untyped                                             ;
+; WIDTHAD_B                          ; 19                   ; Untyped                                             ;
+; NUMWORDS_B                         ; 307200               ; Untyped                                             ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                             ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                             ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                             ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                             ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                             ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                             ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                             ;
+; CBXI_PARAMETER                     ; altsyncram_efn1      ; Untyped                                             ;
++------------------------------------+----------------------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0 ;
++------------------------------------+--------------------------------------------------+-----------------+
+; Parameter Name                     ; Value                                            ; Type            ;
++------------------------------------+--------------------------------------------------+-----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                                ; Untyped         ;
+; AUTO_CARRY_CHAINS                  ; ON                                               ; AUTO_CARRY      ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                              ; IGNORE_CARRY    ;
+; AUTO_CASCADE_CHAINS                ; ON                                               ; AUTO_CASCADE    ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                              ; IGNORE_CASCADE  ;
+; WIDTH_BYTEENA                      ; 1                                                ; Untyped         ;
+; OPERATION_MODE                     ; DUAL_PORT                                        ; Untyped         ;
+; WIDTH_A                            ; 32                                               ; Untyped         ;
+; WIDTHAD_A                          ; 12                                               ; Untyped         ;
+; NUMWORDS_A                         ; 4096                                             ; Untyped         ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                     ; Untyped         ;
+; ADDRESS_ACLR_A                     ; NONE                                             ; Untyped         ;
+; OUTDATA_ACLR_A                     ; NONE                                             ; Untyped         ;
+; WRCONTROL_ACLR_A                   ; NONE                                             ; Untyped         ;
+; INDATA_ACLR_A                      ; NONE                                             ; Untyped         ;
+; BYTEENA_ACLR_A                     ; NONE                                             ; Untyped         ;
+; WIDTH_B                            ; 32                                               ; Untyped         ;
+; WIDTHAD_B                          ; 12                                               ; Untyped         ;
+; NUMWORDS_B                         ; 4096                                             ; Untyped         ;
+; INDATA_REG_B                       ; CLOCK1                                           ; Untyped         ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                           ; Untyped         ;
+; RDCONTROL_REG_B                    ; CLOCK1                                           ; Untyped         ;
+; ADDRESS_REG_B                      ; CLOCK0                                           ; Untyped         ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                     ; Untyped         ;
+; BYTEENA_REG_B                      ; CLOCK1                                           ; Untyped         ;
+; INDATA_ACLR_B                      ; NONE                                             ; Untyped         ;
+; WRCONTROL_ACLR_B                   ; NONE                                             ; Untyped         ;
+; ADDRESS_ACLR_B                     ; NONE                                             ; Untyped         ;
+; OUTDATA_ACLR_B                     ; NONE                                             ; Untyped         ;
+; RDCONTROL_ACLR_B                   ; NONE                                             ; Untyped         ;
+; BYTEENA_ACLR_B                     ; NONE                                             ; Untyped         ;
+; WIDTH_BYTEENA_A                    ; 1                                                ; Untyped         ;
+; WIDTH_BYTEENA_B                    ; 1                                                ; Untyped         ;
+; RAM_BLOCK_TYPE                     ; AUTO                                             ; Untyped         ;
+; BYTE_SIZE                          ; 8                                                ; Untyped         ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                         ; Untyped         ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                             ; Untyped         ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                             ; Untyped         ;
+; INIT_FILE                          ; db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif ; Untyped         ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                           ; Untyped         ;
+; MAXIMUM_DEPTH                      ; 0                                                ; Untyped         ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                           ; Untyped         ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                           ; Untyped         ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                           ; Untyped         ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                           ; Untyped         ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                  ; Untyped         ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                  ; Untyped         ;
+; ENABLE_ECC                         ; FALSE                                            ; Untyped         ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                            ; Untyped         ;
+; WIDTH_ECCSTATUS                    ; 3                                                ; Untyped         ;
+; DEVICE_FAMILY                      ; Cyclone V                                        ; Untyped         ;
+; CBXI_PARAMETER                     ; altsyncram_nms1                                  ; Untyped         ;
++------------------------------------+--------------------------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                           ;
++-------------------------------------------+----------------------------------------------------------------+
+; Name                                      ; Value                                                          ;
++-------------------------------------------+----------------------------------------------------------------+
+; Number of entity instances                ; 2                                                              ;
+; Entity Instance                           ; arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                      ;
+;     -- WIDTH_A                            ; 1                                                              ;
+;     -- NUMWORDS_A                         ; 307200                                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                   ;
+;     -- WIDTH_B                            ; 1                                                              ;
+;     -- NUMWORDS_B                         ; 307200                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                       ;
+; Entity Instance                           ; arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0         ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                      ;
+;     -- WIDTH_A                            ; 32                                                             ;
+;     -- NUMWORDS_A                         ; 4096                                                           ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                   ;
+;     -- WIDTH_B                            ; 32                                                             ;
+;     -- NUMWORDS_B                         ; 4096                                                           ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                       ;
++-------------------------------------------+----------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "razzle:raz_inst"                                                                                                                               ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                        ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; pixel ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "pixel[9..1]" will be connected to GND. ;
++-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic"                                   ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; vis_r0_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r1_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r2_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r3_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r4_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r5_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r6_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r7_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r8_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r9_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r10_o     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r11_o     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r12_o     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_msp_o     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_psp_o     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r14_o     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_pc_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_apsr_o    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_tbit_o    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_ipsr_o    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_control_o ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_primask_o ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "arm_soc:soc_inst|CORTEXM0DS:m0_1"                                                          ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; HBURST      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; HMASTLOCK   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; HPROT       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; HRESP       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; NMI         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; IRQ         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; TXEV        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; RXEV        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SYSRESETREQ ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; SLEEPING    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "arm_soc:soc_inst"       ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; Switches[15..10] ; Input ; Info     ; Stuck at GND ;
++------------------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 950                         ;
+;     CLR               ; 235                         ;
+;     CLR SCLR          ; 20                          ;
+;     ENA               ; 2                           ;
+;     ENA CLR           ; 665                         ;
+;     ENA CLR SCLR      ; 11                          ;
+;     ENA CLR SCLR SLD  ; 11                          ;
+;     plain             ; 6                           ;
+; arriav_lcell_comb     ; 3179                        ;
+;     arith             ; 173                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 127                         ;
+;         2 data inputs ; 12                          ;
+;         4 data inputs ; 2                           ;
+;         5 data inputs ; 31                          ;
+;     extend            ; 36                          ;
+;         7 data inputs ; 36                          ;
+;     normal            ; 2958                        ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 19                          ;
+;         2 data inputs ; 228                         ;
+;         3 data inputs ; 288                         ;
+;         4 data inputs ; 686                         ;
+;         5 data inputs ; 713                         ;
+;         6 data inputs ; 1022                        ;
+;     shared            ; 12                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 1                           ;
+; boundary_port         ; 81                          ;
+; stratixv_ram_block    ; 70                          ;
+;                       ;                             ;
+; Max LUT depth         ; 14.00                       ;
+; Average LUT depth     ; 9.86                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:14     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.1.2 Build 203 01/18/2017 SJ Standard Edition
+    Info: Processing started: Thu Sep 24 11:18:33 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project24_09 -c de1_soc_wrapper
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file behavioural/razzle.sv
+    Info (12023): Found entity 1: razzle File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file behavioural/ahb_interconnect.sv
+    Info (12023): Found entity 1: ahb_interconnect File: /home/ks6n19/Documents/project/behavioural/ahb_interconnect.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file behavioural/ahb_pixel_memory.sv
+    Info (12023): Found entity 1: ahb_pixel_memory File: /home/ks6n19/Documents/project/behavioural/ahb_pixel_memory.sv Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file behavioural/ahb_ram.sv
+    Info (12023): Found entity 1: ahb_ram File: /home/ks6n19/Documents/project/behavioural/ahb_ram.sv Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file behavioural/ahb_switches.sv
+    Info (12023): Found entity 1: ahb_switches File: /home/ks6n19/Documents/project/behavioural/ahb_switches.sv Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file behavioural/arm_soc.sv
+    Info (12023): Found entity 1: arm_soc File: /home/ks6n19/Documents/project/behavioural/arm_soc.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file behavioural/CORTEXM0DS.sv
+    Info (12023): Found entity 1: CORTEXM0DS File: /home/ks6n19/Documents/project/behavioural/CORTEXM0DS.sv Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file behavioural/cortexm0ds_logic.sv
+    Info (12023): Found entity 1: cortexm0ds_logic File: /home/ks6n19/Documents/project/behavioural/cortexm0ds_logic.sv Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file behavioural/de1_soc_wrapper.sv
+    Info (12023): Found entity 1: de1_soc_wrapper File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 8
+Warning (10236): Verilog HDL Implicit Net warning at razzle.sv(44): created implicit net for "Green_Data" File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 44
+Warning (10236): Verilog HDL Implicit Net warning at razzle.sv(45): created implicit net for "Blue_Data" File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 45
+Info (12127): Elaborating entity "de1_soc_wrapper" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at de1_soc_wrapper.sv(75): truncated value with size 32 to match size of target (26) File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 75
+Warning (10230): Verilog HDL assignment warning at de1_soc_wrapper.sv(87): truncated value with size 8 to match size of target (7) File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 87
+Warning (10034): Output port "LEDR" at de1_soc_wrapper.sv(15) has no driver File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 15
+Info (12128): Elaborating entity "arm_soc" for hierarchy "arm_soc:soc_inst" File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 42
+Info (12128): Elaborating entity "CORTEXM0DS" for hierarchy "arm_soc:soc_inst|CORTEXM0DS:m0_1" File: /home/ks6n19/Documents/project/behavioural/arm_soc.sv Line: 56
+Warning (10036): Verilog HDL or VHDL warning at CORTEXM0DS.sv(76): object "cm0_msp" assigned a value but never read File: /home/ks6n19/Documents/project/behavioural/CORTEXM0DS.sv Line: 76
+Warning (10036): Verilog HDL or VHDL warning at CORTEXM0DS.sv(77): object "cm0_psp" assigned a value but never read File: /home/ks6n19/Documents/project/behavioural/CORTEXM0DS.sv Line: 77
+Warning (10036): Verilog HDL or VHDL warning at CORTEXM0DS.sv(79): object "cm0_pc" assigned a value but never read File: /home/ks6n19/Documents/project/behavioural/CORTEXM0DS.sv Line: 79
+Warning (10036): Verilog HDL or VHDL warning at CORTEXM0DS.sv(80): object "cm0_xpsr" assigned a value but never read File: /home/ks6n19/Documents/project/behavioural/CORTEXM0DS.sv Line: 80
+Warning (10036): Verilog HDL or VHDL warning at CORTEXM0DS.sv(81): object "cm0_control" assigned a value but never read File: /home/ks6n19/Documents/project/behavioural/CORTEXM0DS.sv Line: 81
+Warning (10036): Verilog HDL or VHDL warning at CORTEXM0DS.sv(82): object "cm0_primask" assigned a value but never read File: /home/ks6n19/Documents/project/behavioural/CORTEXM0DS.sv Line: 82
+Info (12128): Elaborating entity "cortexm0ds_logic" for hierarchy "arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic" File: /home/ks6n19/Documents/project/behavioural/CORTEXM0DS.sv Line: 144
+Warning (10036): Verilog HDL or VHDL warning at cortexm0ds_logic.sv(1133): object "N4i2z4" assigned a value but never read File: /home/ks6n19/Documents/project/behavioural/cortexm0ds_logic.sv Line: 1133
+Warning (10036): Verilog HDL or VHDL warning at cortexm0ds_logic.sv(1133): object "L5i2z4" assigned a value but never read File: /home/ks6n19/Documents/project/behavioural/cortexm0ds_logic.sv Line: 1133
+Info (12128): Elaborating entity "ahb_interconnect" for hierarchy "arm_soc:soc_inst|ahb_interconnect:interconnect_1" File: /home/ks6n19/Documents/project/behavioural/arm_soc.sv Line: 68
+Warning (10230): Verilog HDL assignment warning at ahb_interconnect.sv(39): truncated value with size 32 to match size of target (3) File: /home/ks6n19/Documents/project/behavioural/ahb_interconnect.sv Line: 39
+Warning (10230): Verilog HDL assignment warning at ahb_interconnect.sv(41): truncated value with size 32 to match size of target (3) File: /home/ks6n19/Documents/project/behavioural/ahb_interconnect.sv Line: 41
+Warning (10230): Verilog HDL assignment warning at ahb_interconnect.sv(43): truncated value with size 32 to match size of target (3) File: /home/ks6n19/Documents/project/behavioural/ahb_interconnect.sv Line: 43
+Info (12128): Elaborating entity "ahb_ram" for hierarchy "arm_soc:soc_inst|ahb_ram:ram_1" File: /home/ks6n19/Documents/project/behavioural/arm_soc.sv Line: 79
+Warning (10850): Verilog HDL warning at ahb_ram.sv(69): number of words (199) in memory file does not match the number of elements in the address range [0:4095] File: /home/ks6n19/Documents/project/behavioural/ahb_ram.sv Line: 69
+Info (12128): Elaborating entity "ahb_switches" for hierarchy "arm_soc:soc_inst|ahb_switches:switches_1" File: /home/ks6n19/Documents/project/behavioural/arm_soc.sv Line: 89
+Info (12128): Elaborating entity "ahb_pixel_memory" for hierarchy "arm_soc:soc_inst|ahb_pixel_memory:pix1" File: /home/ks6n19/Documents/project/behavioural/arm_soc.sv Line: 95
+Warning (10036): Verilog HDL or VHDL warning at ahb_pixel_memory.sv(62): object "read_enable" assigned a value but never read File: /home/ks6n19/Documents/project/behavioural/ahb_pixel_memory.sv Line: 62
+Warning (10230): Verilog HDL assignment warning at ahb_pixel_memory.sv(94): truncated value with size 32 to match size of target (1) File: /home/ks6n19/Documents/project/behavioural/ahb_pixel_memory.sv Line: 94
+Warning (10230): Verilog HDL assignment warning at ahb_pixel_memory.sv(98): truncated value with size 32 to match size of target (19) File: /home/ks6n19/Documents/project/behavioural/ahb_pixel_memory.sv Line: 98
+Info (12128): Elaborating entity "razzle" for hierarchy "razzle:raz_inst" File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 49
+Warning (10230): Verilog HDL assignment warning at razzle.sv(34): truncated value with size 32 to match size of target (8) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 34
+Warning (10230): Verilog HDL assignment warning at razzle.sv(35): truncated value with size 32 to match size of target (8) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 35
+Warning (10230): Verilog HDL assignment warning at razzle.sv(36): truncated value with size 32 to match size of target (8) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 36
+Warning (10230): Verilog HDL assignment warning at razzle.sv(43): truncated value with size 10 to match size of target (1) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 43
+Warning (10230): Verilog HDL assignment warning at razzle.sv(55): truncated value with size 11 to match size of target (10) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 55
+Warning (10230): Verilog HDL assignment warning at razzle.sv(56): truncated value with size 11 to match size of target (9) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 56
+Warning (10230): Verilog HDL assignment warning at razzle.sv(95): truncated value with size 32 to match size of target (11) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 95
+Warning (10230): Verilog HDL assignment warning at razzle.sv(112): truncated value with size 32 to match size of target (11) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 112
+Info (19000): Inferred 2 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "arm_soc:soc_inst|ahb_pixel_memory:pix1|memory_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 1
+        Info (286033): Parameter WIDTHAD_A set to 19
+        Info (286033): Parameter NUMWORDS_A set to 307200
+        Info (286033): Parameter WIDTH_B set to 1
+        Info (286033): Parameter WIDTHAD_B set to 19
+        Info (286033): Parameter NUMWORDS_B set to 307200
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "arm_soc:soc_inst|ahb_ram:ram_1|memory_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 12
+        Info (286033): Parameter NUMWORDS_A set to 4096
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 12
+        Info (286033): Parameter NUMWORDS_B set to 4096
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+Info (12130): Elaborated megafunction instantiation "arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0"
+Info (12133): Instantiated megafunction "arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "1"
+    Info (12134): Parameter "WIDTHAD_A" = "19"
+    Info (12134): Parameter "NUMWORDS_A" = "307200"
+    Info (12134): Parameter "WIDTH_B" = "1"
+    Info (12134): Parameter "WIDTHAD_B" = "19"
+    Info (12134): Parameter "NUMWORDS_B" = "307200"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_efn1.tdf
+    Info (12023): Found entity 1: altsyncram_efn1 File: /home/ks6n19/Documents/project/db/altsyncram_efn1.tdf Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_3na.tdf
+    Info (12023): Found entity 1: decode_3na File: /home/ks6n19/Documents/project/db/decode_3na.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_chb.tdf
+    Info (12023): Found entity 1: mux_chb File: /home/ks6n19/Documents/project/db/mux_chb.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0"
+Info (12133): Instantiated megafunction "arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "12"
+    Info (12134): Parameter "NUMWORDS_A" = "4096"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "12"
+    Info (12134): Parameter "NUMWORDS_B" = "4096"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_nms1.tdf
+    Info (12023): Found entity 1: altsyncram_nms1 File: /home/ks6n19/Documents/project/db/altsyncram_nms1.tdf Line: 28
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/ks6n19/Documents/project/db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /srv/intelFPGA/16.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/ks6n19/Documents/project/db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /srv/intelFPGA/16.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "HEX0[0]" is stuck at VCC File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 16
+    Warning (13410): Pin "HEX0[1]" is stuck at VCC File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 16
+    Warning (13410): Pin "HEX0[5]" is stuck at VCC File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 16
+    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 17
+    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 17
+    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 17
+    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 17
+    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 17
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 17
+    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 18
+    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 18
+    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 18
+    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 18
+    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 18
+    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 19
+    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 19
+    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 19
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 19
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_G[2]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_G[3]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_G[4]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_G[5]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_G[6]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_G[7]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_B[4]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_B[5]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_B[6]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_B[7]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 20
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 17 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file /home/ks6n19/Documents/project/output_files/de1_soc_wrapper.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 13
+Info (21057): Implemented 3988 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 66 output pins
+    Info (21061): Implemented 3837 logic cells
+    Info (21064): Implemented 70 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 79 warnings
+    Info: Peak virtual memory: 1276 megabytes
+    Info: Processing ended: Thu Sep 24 11:19:00 2020
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:42
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/ks6n19/Documents/project/output_files/de1_soc_wrapper.map.smsg.
+
+

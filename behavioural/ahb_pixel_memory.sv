@@ -56,7 +56,7 @@ timeprecision 100ps;
 localparam No_Transfer = 2'b0;
 
 //memory
-  logic [7:0] memory [0:307199] ;
+  logic [0:0] memory [0:307199] ;
 
 // other declarations
   logic write_enable, read_enable;
@@ -98,21 +98,14 @@ always_ff @(posedge HCLK, negedge HRESETn)
     pixel_address = (pixel_y * 640) + pixel_x  ;
     
    
-      
-   assign pixel = memory[pixel_address] ;
+   always_ff @(posedge HCLK)  
+     begin
+      pixel <= memory[pixel_address] ;
+     end
+     
+   //assign HRDATA = read_enable ? memory[word_address] : '0 ;   
+   assign HRDATA = '0; // read is not permitted mode
    
-   assign HRDATA = read_enable ? memory[word_address] : '0 ;   
-   
-   /*
-   assign bv1 = memory[0] ;
-   assign bv2 = memory[1] ;
-   assign bv3 = memory[2] ;
-   assign tv1 = memory[3] ;
-   assign tv2 = memory[4] ;
-   assign tv3 = memory[5] ;
-   assign BCO = memory[6] ;
-   assign TCO = memory[7] ;
-   */
     
  
 //Transfer Response
