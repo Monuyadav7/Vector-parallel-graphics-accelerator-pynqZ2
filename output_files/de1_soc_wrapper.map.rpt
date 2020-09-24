@@ -1,5 +1,5 @@
 Analysis & Synthesis report for de1_soc_wrapper
-Thu Sep 24 11:19:00 2020
+Thu Sep 24 12:51:41 2020
 Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Standard Edition
 
 
@@ -60,7 +60,7 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Sep 24 11:19:00 2020           ;
+; Analysis & Synthesis Status     ; Successful - Thu Sep 24 12:51:41 2020           ;
 ; Quartus Prime Version           ; 16.1.2 Build 203 01/18/2017 SJ Standard Edition ;
 ; Revision Name                   ; de1_soc_wrapper                                 ;
 ; Top-level Entity Name           ; de1_soc_wrapper                                 ;
@@ -193,7 +193,8 @@ agreement for further details.
 ;     Processor 12           ;   0.0%      ;
 ;     Processor 13           ;   0.0%      ;
 ;     Processor 14           ;   0.0%      ;
-;     Processors 15-16       ;   0.0%      ;
+;     Processor 15           ;   0.0%      ;
+;     Processor 16           ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -801,7 +802,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.2 Build 203 01/18/2017 SJ Standard Edition
-    Info: Processing started: Thu Sep 24 11:18:33 2020
+    Info: Processing started: Thu Sep 24 12:51:14 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project24_09 -c de1_soc_wrapper
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
@@ -937,8 +938,6 @@ Info (12133): Instantiated megafunction "arm_soc:soc_inst|ahb_ram:ram_1|altsyncr
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_nms1.tdf
     Info (12023): Found entity 1: altsyncram_nms1 File: /home/ks6n19/Documents/project/db/altsyncram_nms1.tdf Line: 28
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/ks6n19/Documents/project/db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /srv/intelFPGA/16.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/ks6n19/Documents/project/db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /srv/intelFPGA/16.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 15
@@ -997,11 +996,11 @@ Info (21057): Implemented 3988 device resources after synthesis - the final reso
     Info (21059): Implemented 66 output pins
     Info (21061): Implemented 3837 logic cells
     Info (21064): Implemented 70 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 79 warnings
-    Info: Peak virtual memory: 1276 megabytes
-    Info: Processing ended: Thu Sep 24 11:19:00 2020
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 77 warnings
+    Info: Peak virtual memory: 1267 megabytes
+    Info: Processing ended: Thu Sep 24 12:51:41 2020
     Info: Elapsed time: 00:00:27
-    Info: Total CPU time (on all processors): 00:00:42
+    Info: Total CPU time (on all processors): 00:00:41
 
 
 +------------------------------------------+
