@@ -19,7 +19,6 @@ module razzle (
 logic [10:0] H_count,V_count; 
 
 logic Red_Data; 
-logic red_square ;
 logic video_on, video_on_H, video_on_V, clock_enable; 
 
 timeunit 1ns;
@@ -41,7 +40,7 @@ assign VGA_BLANK_N = video_on;
 
 
 // Colors for pixel data on video signal 
-assign Red_Data = red_square ; 
+assign Red_Data = pixel ; 
 assign Green_Data = 0; 
 assign Blue_Data = 0; 
 
@@ -53,26 +52,11 @@ assign Blue =  Blue_Data && video_on;
 // video_on turns off pixel color data when not in the pixel view area 
 assign video_on = video_on_H && video_on_V; 
 
+assign pixel_x = H_count ;
+assign pixel_y = V_count ;
 
 
-// Red square calculation
-
-always @(posedge CLOCK_50, negedge nReset)
-	if ( ! nReset)
-		begin
-			red_square = 0;
-		end
-	else
-		begin : FRACTAL_COMPUTE 
-		if ( video_on )
-		begin
-			if (( V_count == pixel_y )&&( H_count == pixel_x ))
-					red_square = 1; 
-				else   
-	    			red_square = '0 ; 	
-		end
-    	end : FRACTAL_COMPUTE
-     
+    
 // Generate Horizontal and Vertical Timing Signals for Video Signal 
 //VIDEO_DISPLAY 
 
@@ -84,8 +68,6 @@ always @(posedge CLOCK_50, negedge nReset)
 		V_count = 0; 
 		video_on_H = 0; 
 		video_on_V = 0; 
-		pixel_x = 0;
-		pixel_y = 0 ;
     end
 	
 	else
@@ -106,10 +88,6 @@ always @(posedge CLOCK_50, negedge nReset)
 		if ( clock_enable )
 		begin
 		     
-		       if ( pixel_x >= 320)
-		       		pixel_x = 0;
-			else
-				pixel_x = pixel_x + 1;
 		
 			if (H_count >= 799)
 				H_count = 0; 
@@ -133,11 +111,7 @@ always @(posedge CLOCK_50, negedge nReset)
 		else if (H_count == 699)
 			V_count = V_count + 1; 
 
-		if(pixel_y >= 240)
-			pixel_y = 0;
-		else 
-			pixel_y = pixel_y +1 ;			
-		
+
 	  // Generate Vertical Sync Signal 
 		if ((V_count <= 494) && (V_count >= 493))
 			VGA_VS = 0; 
