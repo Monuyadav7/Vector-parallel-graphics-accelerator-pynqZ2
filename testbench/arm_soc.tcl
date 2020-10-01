@@ -13,9 +13,6 @@ simvision {
     waveform  add  -signals  arm_soc_stim.HRESETn
     waveform  add  -signals  arm_soc_stim.Switches
     waveform  add  -signals  arm_soc_stim.Buttons
-    waveform  add  -signals  arm_soc_stim.pixel_x
-    waveform  add  -signals  arm_soc_stim.pixel_y
-    waveform  add  -signals  arm_soc_stim.pixel
     waveform  add  -signals  arm_soc_stim.LOCKUP
     waveform  add  -signals  arm_soc_stim.dut.HADDR
     waveform  add  -signals  arm_soc_stim.dut.HWRITE
@@ -24,6 +21,9 @@ simvision {
     waveform  add  -signals  arm_soc_stim.dut.HSEL_RAM
     waveform  add  -signals  arm_soc_stim.dut.HSEL_SW
     waveform  add  -signals  arm_soc_stim.dut.HSEL_DOUT
+    waveform  add  -signals  arm_soc_stim.dut.pixel_x
+    waveform  add  -signals  arm_soc_stim.dut.pixel_y
+    waveform  add  -signals  arm_soc_stim.dut.pixel
 
 }
 

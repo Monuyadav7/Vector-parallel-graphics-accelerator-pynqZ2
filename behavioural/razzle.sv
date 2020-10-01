@@ -7,9 +7,9 @@
  
 module razzle ( 
  
-		input logic CLOCK_50, 
-		input logic [3:0] KEY,
-		input logic [9:0] pixel,
+	input logic CLOCK_50, 
+	input logic [3:0] KEY,
+	input logic  pixel,
     	output logic [7:0] VGA_R,VGA_G,VGA_B, 
 	output logic [9:0] pixel_x,
 	output logic [8:0] pixel_y ,
@@ -18,7 +18,6 @@ module razzle (
 // Video Display Signals    
 logic [10:0] H_count,V_count; 
 
-logic Red_Data; 
 logic video_on, video_on_H, video_on_V, clock_enable; 
 
 timeunit 1ns;
@@ -40,21 +39,20 @@ assign VGA_BLANK_N = video_on;
 
 
 // Colors for pixel data on video signal 
-assign Red_Data = pixel ; 
+//assign Red_Data = 0 ; 
 assign Green_Data = 0; 
 assign Blue_Data = 0; 
 
 // turn off color (black) at screen edges and during retrace with video_on 
-assign Red =   Red_Data && video_on; 
+assign Red =   pixel && video_on; 
 assign Green = Green_Data && video_on; 
 assign Blue =  Blue_Data && video_on; 
 
 // video_on turns off pixel color data when not in the pixel view area 
 assign video_on = video_on_H && video_on_V; 
 
-assign pixel_x = H_count ;
-assign pixel_y = V_count ;
-
+assign pixel_x =(H_count <= 639)? H_count : '0 ;
+assign pixel_y = (V_count <= 479)? V_count : '0 ;
 
     
 // Generate Horizontal and Vertical Timing Signals for Video Signal 
@@ -71,67 +69,69 @@ always @(posedge CLOCK_50, negedge nReset)
     end
 	
 	else
+	
 	begin : VIDEO_DISPLAY
-      // Clock enable used for a 24Mhz video clock rate 
-      // 640 by 480 display mode needs close to a 25Mhz pixel clock 
-      // 24Mhz should work on most new monitors 
+	    // Clock enable used for a 24Mhz video clock rate 
+	    // 640 by 480 display mode needs close to a 25Mhz pixel clock 
+	    // 24Mhz should work on most new monitors 
 
-      clock_enable = ! clock_enable; 
+	    clock_enable = ! clock_enable; 
 
-      // H_count counts pixels (640 + extra time for sync signals) 
-      // 
-      //   <-Clock out RGB Pixel Row Data ->   <-H Sync-> 
-      //   ------------------------------------__________-------- 
-      //   0                           640   659       755    799 
-      // 
+	    // H_count counts pixels (640 + extra time for sync signals) 
+	    // 
+	    //   <-Clock out RGB Pixel Row Data ->   <-H Sync-> 
+	    //   ------------------------------------__________-------- 
+	    //   0                           640   659       755    799 
+	    // 
 
-		if ( clock_enable )
-		begin
-		     
-		
-			if (H_count >= 799)
-				H_count = 0; 
-			else 
-				H_count = H_count + 1; 
-
-	  // Generate Horizontal Sync Signal 
-		if ((H_count <= 755) && (H_count >= 659))
-	     VGA_HS = 0; 
-		else 
-	     VGA_HS = 1; 
-
-	  // V_count counts rows of pixels (480 + extra time for sync signals) 
-	  // 
-	  //  <---- 480 Horizontal Syncs (pixel rows) -->  ->V Sync<- 
-	  //  -----------------------------------------------_______------------ 
-	  //  0                                       480    493-494          524 
-	  // 
-		if ((V_count >= 524) && (H_count >= 699))
-			V_count = 0; 
-		else if (H_count == 699)
-			V_count = V_count + 1; 
+	      if ( clock_enable )
+	      begin
 
 
-	  // Generate Vertical Sync Signal 
-		if ((V_count <= 494) && (V_count >= 493))
-			VGA_VS = 0; 
-		else 
-			VGA_VS = 1; 
+		      if (H_count >= 799)
+			      H_count = 0; 
+		      else 
+			      H_count = H_count + 1; 
+
+		// Generate Horizontal Sync Signal 
+
+		      if ((H_count <= 755) && (H_count >= 659))
+	                      VGA_HS = 0; 
+		      else 
+	                      VGA_HS = 1; 
+
+		// V_count counts rows of pixels (480 + extra time for sync signals) 
+		// 
+		//  <---- 480 Horizontal Syncs (pixel rows) -->  ->V Sync<- 
+		//  -----------------------------------------------_______------------ 
+		//  0                                       480    493-494          524 
+		// 
+		      if ((V_count >= 524) && (H_count >= 699))
+			      V_count = 0; 
+		      else if (H_count == 699)
+			      V_count = V_count + 1; 
 
 
-	  // Generate Video on Screen Signals for Pixel Data 
-		if (H_count <= 639) 
-			video_on_H = 1; 
-		else 
-			video_on_H = 0; 
+		// Generate Vertical Sync Signal 
+		      if ((V_count <= 494) && (V_count >= 493))
+			      VGA_VS = 0; 
+		      else 
+			      VGA_VS = 1; 
 
 
-		if (V_count <= 479)
-			video_on_V = 1; 
-		else 
-			video_on_V = 0; 
+		// Generate Video on Screen Signals for Pixel Data 
+		      if (H_count <= 639) 
+			      video_on_H = 1; 
+		      else 
+			      video_on_H = 0; 
 
-	end 
+
+		      if (V_count <= 479)
+			      video_on_V = 1; 
+		      else 
+			      video_on_V = 0; 
+
+	      end 
 
 	end : VIDEO_DISPLAY
 

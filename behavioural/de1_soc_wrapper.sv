@@ -39,7 +39,7 @@ timeprecision 100ps;
   
   assign Buttons = ~KEY[1:0];
  
-  arm_soc soc_inst(.HCLK, .HRESETn, .Switches, .pixel, .pixel_x, .pixel_y, .Buttons, .LOCKUP);
+  arm_soc soc_inst(.HCLK, .HRESETn, .Switches, .pixel(pixel), .pixel_x(pixel_x), .pixel_y(pixel_y), .Buttons, .LOCKUP);
   
   razzle raz_inst  (
         .CLOCK_50(CLOCK_50), .KEY(KEY), .pixel_x(pixel_x), .pixel_y(pixel_y), .pixel(pixel), 

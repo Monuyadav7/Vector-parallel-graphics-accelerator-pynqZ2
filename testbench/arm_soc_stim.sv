@@ -6,13 +6,10 @@ timeprecision 100ps;
   logic HRESETn, HCLK; 
   logic [15:0] Switches;
   logic [1:0] Buttons;
-  logic [9:0] pixel_x ;
-  logic [8:0] pixel_y ;
-  logic pixel ;
-  logic [3:0] BCO, TCO ;
   wire LOCKUP;
 
-  arm_soc dut(.HCLK, .HRESETn, .pixel_x, .pixel_y, .Switches, .Buttons, .pixel, .LOCKUP);
+
+  arm_soc dut(.HCLK, .HRESETn, .Switches, .Buttons,.LOCKUP );
 
   always
     begin
@@ -21,6 +18,7 @@ timeprecision 100ps;
       #10ns HCLK = 0;
       #5ns HCLK = 0;
     end
+       
 
   task press_button(input n);
       #1us Buttons[n] = 1;

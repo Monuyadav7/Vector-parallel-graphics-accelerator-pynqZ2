@@ -1,0 +1,260 @@
+
+#
+# Preferences
+#
+preferences set toolbar-CursorControl-MemViewer {
+  usual
+  position -row 0 -anchor e
+}
+preferences set toolbar-Standard-MemViewer {
+  usual
+  position -row 1
+}
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set toolbar-sendToIndago-WaveWindow {
+  usual
+  position -pos 1
+}
+preferences set toolbar-Standard-Console {
+  usual
+  position -pos 1
+}
+preferences set toolbar-Search-Console {
+  usual
+  position -pos 2
+}
+preferences set plugin-enable-groupscope 0
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+preferences set toolbar-Windows-MemViewer {
+  usual
+  position -row 1 -pos 1
+}
+preferences set toolbar-TimeSearch-MemViewer {
+  usual
+  position -row 2 -pos 0
+}
+preferences set whats-new-dont-show-at-startup 1
+preferences set toolbar-SimControl-MemViewer {
+  usual
+  position -row 3 -pos 0
+}
+
+#
+# Mnemonic Maps
+#
+mmap new -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Design Browser windows
+#
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 730x500+261+33}] != ""} {
+    window geometry "Design Browser 1" 730x500+261+33
+}
+window target "Design Browser 1" on
+browser using {Design Browser 1}
+browser set \
+    -signalsort name
+browser timecontrol set -lock 0
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waves for ARM SoC Example" -geometry 1244x600+0+25}] != ""} {
+    window geometry "Waves for ARM SoC Example" 1244x600+0+25
+}
+window target "Waves for ARM SoC Example" on
+waveform using {Waves for ARM SoC Example}
+waveform sidebar visibility partial
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 175 \
+    -units ps \
+    -valuewidth 75
+waveform baseline set -time 0
+
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.CLOCK_50
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.KEY[2:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.SW[9:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.LEDR[9:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.HEX0[6:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.HEX1[6:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.HEX2[6:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.HEX3[6:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.VGA_R[7:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.VGA_G[7:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.VGA_B[7:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.VGA_HS
+	} ]
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.VGA_VS
+	} ]
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.VGA_CLK
+	} ]
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.VGA_BLANK_N
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.dut.soc_inst.HADDR[31:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.dut.soc_inst.HWRITE
+	} ]
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.dut.soc_inst.HSEL_RAM
+	} ]
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.dut.soc_inst.HSEL_SW
+	} ]
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.dut.soc_inst.HSEL_DOUT
+	} ]
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.CLOCK_50
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.KEY[2:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.SW[9:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.LEDR[9:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.HEX0[6:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.HEX1[6:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.HEX2[6:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.HEX3[6:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.VGA_R[7:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.VGA_G[7:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.VGA_B[7:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.VGA_HS
+	} ]
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.VGA_VS
+	} ]
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.VGA_CLK
+	} ]
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.VGA_BLANK_N
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.dut.soc_inst.HADDR[31:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.dut.soc_inst.HWRITE
+	} ]
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.dut.soc_inst.HSEL_RAM
+	} ]
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.dut.soc_inst.HSEL_SW
+	} ]
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.dut.soc_inst.HSEL_DOUT
+	} ]
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.dut.raz_inst.pixel
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.dut.raz_inst.pixel_x[9:0]}
+	} ]
+waveform format $id -radix %d
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.dut.raz_inst.pixel_y[8:0]}
+	} ]
+waveform format $id -radix %d
+set id [waveform add -signals  {
+	simulator::de1_soc_wrapper_stim.dut.soc_inst.pix1.pixel
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.dut.soc_inst.pix1.pixel_address[18:0]}
+	} ]
+waveform format $id -radix %d
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.dut.raz_inst.V_count[10:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::de1_soc_wrapper_stim.dut.raz_inst.H_count[10:0]}
+	} ]
+
+waveform xview limits 15056311800ps 16936872800ps
+
+#
+# Waveform Window Links
+#
+
+#
+# Memory Viewer windows
+#
+if {[catch {window new MemViewer -name "Memory Viewer 6" -geometry 361x500+904+75}] != ""} {
+    window geometry "Memory Viewer 6" 361x500+904+75
+}
+window target "Memory Viewer 6" on
+memviewer using {Memory Viewer 6}
+memviewer set \
+-primarycursor TimeE \
+-units ps \
+-radix default \
+-addressradix default \
+-addressorder MSBtoLSB
+
+memviewer add  {simulator::de1_soc_wrapper_stim.dut.soc_inst.pix1.memory[0:307199]} 
+
+memviewer sidebar visibility partial
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 730x250+0+431
+
+#
+# Layout selection
+#

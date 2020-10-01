@@ -4,12 +4,13 @@
 module arm_soc(
 
   input HCLK, HRESETn,
-  input [9:0]pixel_x ,
-  input [8:0] pixel_y,
+  input logic [9:0]pixel_x ,
+  input logic [8:0] pixel_y,
   input [15:0] Switches, 
-  input [1:0] Buttons, 	
+  input [1:0] Buttons, 
   output logic pixel,
   output LOCKUP
+
 
 );
  
@@ -33,6 +34,7 @@ timeprecision 100ps;
   // Non-AHB M0 Signals
   wire TXEV, RXEV, SLEEPING, SYSRESETREQ, NMI;
   wire [15:0] IRQ;
+
   
   // Set this to zero because simple slaves do not generate errors
   assign HRESP = '0;
@@ -93,6 +95,7 @@ timeprecision 100ps;
 	.HCLK, .HRESETn, .HADDR, .HWDATA, .HSIZE, .HTRANS, .HWRITE, .HREADY,
     .HSEL(HSEL_DOUT),.HRDATA(HRDATA_DOUT),.HREADYOUT(HREADYOUT_DOUT),.pixel_x(pixel_x), .pixel_y(pixel_y) , .pixel(pixel)
   );
+
 
 
 endmodule

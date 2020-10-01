@@ -1,5 +1,5 @@
 Analysis & Synthesis report for de1_soc_wrapper
-Thu Sep 24 12:51:41 2020
+Thu Oct  1 13:33:54 2020
 Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Standard Edition
 
 
@@ -19,21 +19,20 @@ Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Standard Edition
  11. Inverted Register Statistics
  12. Registers Packed Into Inferred Megafunctions
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_efn1:auto_generated
+ 14. Source assignments for arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_6ot1:auto_generated
  15. Source assignments for arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0|altsyncram_nms1:auto_generated
  16. Parameter Settings for User Entity Instance: arm_soc:soc_inst|ahb_interconnect:interconnect_1
  17. Parameter Settings for User Entity Instance: arm_soc:soc_inst|ahb_ram:ram_1
  18. Parameter Settings for Inferred Entity Instance: arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0
  19. Parameter Settings for Inferred Entity Instance: arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0
  20. altsyncram Parameter Settings by Entity Instance
- 21. Port Connectivity Checks: "razzle:raz_inst"
- 22. Port Connectivity Checks: "arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic"
- 23. Port Connectivity Checks: "arm_soc:soc_inst|CORTEXM0DS:m0_1"
- 24. Port Connectivity Checks: "arm_soc:soc_inst"
- 25. Post-Synthesis Netlist Statistics for Top Partition
- 26. Elapsed Time Per Partition
- 27. Analysis & Synthesis Messages
- 28. Analysis & Synthesis Suppressed Messages
+ 21. Port Connectivity Checks: "arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic"
+ 22. Port Connectivity Checks: "arm_soc:soc_inst|CORTEXM0DS:m0_1"
+ 23. Port Connectivity Checks: "arm_soc:soc_inst"
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
+ 27. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -60,7 +59,7 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Sep 24 12:51:41 2020           ;
+; Analysis & Synthesis Status     ; Successful - Thu Oct  1 13:33:54 2020           ;
 ; Quartus Prime Version           ; 16.1.2 Build 203 01/18/2017 SJ Standard Edition ;
 ; Revision Name                   ; de1_soc_wrapper                                 ;
 ; Top-level Entity Name           ; de1_soc_wrapper                                 ;
@@ -175,7 +174,7 @@ agreement for further details.
 ; Number detected on machine ; 24          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
@@ -191,43 +190,41 @@ agreement for further details.
 ;     Processor 10           ;   0.0%      ;
 ;     Processor 11           ;   0.0%      ;
 ;     Processor 12           ;   0.0%      ;
-;     Processor 13           ;   0.0%      ;
-;     Processor 14           ;   0.0%      ;
-;     Processor 15           ;   0.0%      ;
-;     Processor 16           ;   0.0%      ;
+;     Processors 13-16       ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                 ;
-+--------------------------------------------------+-----------------+-------------------------------------------------------+---------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                 ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                    ; Library ;
-+--------------------------------------------------+-----------------+-------------------------------------------------------+---------------------------------------------------------------------------------+---------+
-; behavioural/razzle.sv                            ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/razzle.sv                            ;         ;
-; behavioural/ahb_interconnect.sv                  ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/ahb_interconnect.sv                  ;         ;
-; behavioural/ahb_pixel_memory.sv                  ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/ahb_pixel_memory.sv                  ;         ;
-; behavioural/ahb_ram.sv                           ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/ahb_ram.sv                           ;         ;
-; behavioural/ahb_switches.sv                      ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/ahb_switches.sv                      ;         ;
-; behavioural/arm_soc.sv                           ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/arm_soc.sv                           ;         ;
-; behavioural/CORTEXM0DS.sv                        ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/CORTEXM0DS.sv                        ;         ;
-; behavioural/cortexm0ds_logic.sv                  ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/cortexm0ds_logic.sv                  ;         ;
-; behavioural/de1_soc_wrapper.sv                   ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv                   ;         ;
-; behavioural/code.hex                             ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; /home/ks6n19/Documents/project/behavioural/code.hex                             ;         ;
-; altsyncram.tdf                                   ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/altsyncram.tdf              ;         ;
-; stratix_ram_block.inc                            ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/stratix_ram_block.inc       ;         ;
-; lpm_mux.inc                                      ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/lpm_mux.inc                 ;         ;
-; lpm_decode.inc                                   ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/lpm_decode.inc              ;         ;
-; aglobal161.inc                                   ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/aglobal161.inc              ;         ;
-; a_rdenreg.inc                                    ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/a_rdenreg.inc               ;         ;
-; altrom.inc                                       ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/altrom.inc                  ;         ;
-; altram.inc                                       ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/altram.inc                  ;         ;
-; altdpram.inc                                     ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/altdpram.inc                ;         ;
-; db/altsyncram_efn1.tdf                           ; yes             ; Auto-Generated Megafunction                           ; /home/ks6n19/Documents/project/db/altsyncram_efn1.tdf                           ;         ;
-; db/decode_3na.tdf                                ; yes             ; Auto-Generated Megafunction                           ; /home/ks6n19/Documents/project/db/decode_3na.tdf                                ;         ;
-; db/mux_chb.tdf                                   ; yes             ; Auto-Generated Megafunction                           ; /home/ks6n19/Documents/project/db/mux_chb.tdf                                   ;         ;
-; db/altsyncram_nms1.tdf                           ; yes             ; Auto-Generated Megafunction                           ; /home/ks6n19/Documents/project/db/altsyncram_nms1.tdf                           ;         ;
-; db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/ks6n19/Documents/project/db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif ;         ;
-+--------------------------------------------------+-----------------+-------------------------------------------------------+---------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                   ;
++-----------------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                          ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                             ; Library ;
++-----------------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------+---------+
+; behavioural/razzle.sv                                     ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/razzle.sv                                     ;         ;
+; behavioural/ahb_interconnect.sv                           ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/ahb_interconnect.sv                           ;         ;
+; behavioural/ahb_pixel_memory.sv                           ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/ahb_pixel_memory.sv                           ;         ;
+; behavioural/ahb_ram.sv                                    ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/ahb_ram.sv                                    ;         ;
+; behavioural/ahb_switches.sv                               ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/ahb_switches.sv                               ;         ;
+; behavioural/arm_soc.sv                                    ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/arm_soc.sv                                    ;         ;
+; behavioural/CORTEXM0DS.sv                                 ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/CORTEXM0DS.sv                                 ;         ;
+; behavioural/cortexm0ds_logic.sv                           ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/cortexm0ds_logic.sv                           ;         ;
+; behavioural/de1_soc_wrapper.sv                            ; yes             ; User SystemVerilog HDL File                           ; /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv                            ;         ;
+; behavioural/code.hex                                      ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; /home/ks6n19/Documents/project/behavioural/code.hex                                      ;         ;
+; altsyncram.tdf                                            ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/altsyncram.tdf                       ;         ;
+; stratix_ram_block.inc                                     ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/stratix_ram_block.inc                ;         ;
+; lpm_mux.inc                                               ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/lpm_mux.inc                          ;         ;
+; lpm_decode.inc                                            ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/lpm_decode.inc                       ;         ;
+; aglobal161.inc                                            ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/aglobal161.inc                       ;         ;
+; a_rdenreg.inc                                             ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/a_rdenreg.inc                        ;         ;
+; altrom.inc                                                ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/altrom.inc                           ;         ;
+; altram.inc                                                ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/altram.inc                           ;         ;
+; altdpram.inc                                              ; yes             ; Megafunction                                          ; /srv/intelFPGA/16.1/quartus/libraries/megafunctions/altdpram.inc                         ;         ;
+; db/altsyncram_6ot1.tdf                                    ; yes             ; Auto-Generated Megafunction                           ; /home/ks6n19/Documents/project/db/altsyncram_6ot1.tdf                                    ;         ;
+; db/de1_soc_wrapper.ram0_ahb_pixel_memory_4146d53f.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/ks6n19/Documents/project/db/de1_soc_wrapper.ram0_ahb_pixel_memory_4146d53f.hdl.mif ;         ;
+; db/decode_3na.tdf                                         ; yes             ; Auto-Generated Megafunction                           ; /home/ks6n19/Documents/project/db/decode_3na.tdf                                         ;         ;
+; db/mux_chb.tdf                                            ; yes             ; Auto-Generated Megafunction                           ; /home/ks6n19/Documents/project/db/mux_chb.tdf                                            ;         ;
+; db/altsyncram_nms1.tdf                                    ; yes             ; Auto-Generated Megafunction                           ; /home/ks6n19/Documents/project/db/altsyncram_nms1.tdf                                    ;         ;
+; db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif          ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/ks6n19/Documents/project/db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif          ;         ;
++-----------------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -235,14 +232,14 @@ agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 2146           ;
+; Estimate of Logic utilization (ALMs needed) ; 2159           ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 3174           ;
+; Combinational ALUT usage for logic          ; 3200           ;
 ;     -- 7 input functions                    ; 36             ;
 ;     -- 6 input functions                    ; 1022           ;
-;     -- 5 input functions                    ; 744            ;
-;     -- 4 input functions                    ; 688            ;
-;     -- <=3 input functions                  ; 684            ;
+;     -- 5 input functions                    ; 755            ;
+;     -- 4 input functions                    ; 699            ;
+;     -- <=3 input functions                  ; 688            ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 950            ;
 ;                                             ;                ;
@@ -254,7 +251,7 @@ agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 1020           ;
-; Total fan-out                               ; 19817          ;
+; Total fan-out                               ; 19937          ;
 ; Average fan-out                             ; 4.55           ;
 +---------------------------------------------+----------------+
 
@@ -264,33 +261,33 @@ agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                               ; Entity Name      ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
-; |de1_soc_wrapper                             ; 3174 (27)           ; 950 (28)                  ; 438272            ; 0          ; 81   ; 0            ; |de1_soc_wrapper                                                                                                                  ; de1_soc_wrapper  ; work         ;
-;    |arm_soc:soc_inst|                        ; 3087 (0)            ; 896 (0)                   ; 438272            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst                                                                                                 ; arm_soc          ; work         ;
+; |de1_soc_wrapper                             ; 3200 (27)           ; 950 (28)                  ; 438272            ; 0          ; 81   ; 0            ; |de1_soc_wrapper                                                                                                                  ; de1_soc_wrapper  ; work         ;
+;    |arm_soc:soc_inst|                        ; 3100 (0)            ; 896 (0)                   ; 438272            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst                                                                                                 ; arm_soc          ; work         ;
 ;       |CORTEXM0DS:m0_1|                      ; 2912 (0)            ; 822 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|CORTEXM0DS:m0_1                                                                                 ; CORTEXM0DS       ; work         ;
 ;          |cortexm0ds_logic:u_logic|          ; 2912 (2912)         ; 822 (822)                 ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic                                                        ; cortexm0ds_logic ; work         ;
 ;       |ahb_interconnect:interconnect_1|      ; 43 (43)             ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1                                                                 ; ahb_interconnect ; work         ;
-;       |ahb_pixel_memory:pix1|                ; 69 (13)             ; 26 (20)                   ; 307200            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1                                                                           ; ahb_pixel_memory ; work         ;
-;          |altsyncram:memory_rtl_0|           ; 56 (0)              ; 6 (0)                     ; 307200            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0                                                   ; altsyncram       ; work         ;
-;             |altsyncram_efn1:auto_generated| ; 56 (0)              ; 6 (6)                     ; 307200            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_efn1:auto_generated                    ; altsyncram_efn1  ; work         ;
-;                |decode_3na:decode2|          ; 45 (45)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_efn1:auto_generated|decode_3na:decode2 ; decode_3na       ; work         ;
-;                |mux_chb:mux3|                ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_efn1:auto_generated|mux_chb:mux3       ; mux_chb          ; work         ;
+;       |ahb_pixel_memory:pix1|                ; 82 (21)             ; 26 (20)                   ; 307200            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1                                                                           ; ahb_pixel_memory ; work         ;
+;          |altsyncram:memory_rtl_0|           ; 61 (0)              ; 6 (0)                     ; 307200            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0                                                   ; altsyncram       ; work         ;
+;             |altsyncram_6ot1:auto_generated| ; 61 (0)              ; 6 (6)                     ; 307200            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_6ot1:auto_generated                    ; altsyncram_6ot1  ; work         ;
+;                |decode_3na:decode2|          ; 50 (50)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_6ot1:auto_generated|decode_3na:decode2 ; decode_3na       ; work         ;
+;                |mux_chb:mux3|                ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_6ot1:auto_generated|mux_chb:mux3       ; mux_chb          ; work         ;
 ;       |ahb_ram:ram_1|                        ; 52 (52)             ; 18 (18)                   ; 131072            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1                                                                                   ; ahb_ram          ; work         ;
 ;          |altsyncram:memory_rtl_0|           ; 0 (0)               ; 0 (0)                     ; 131072            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0                                                           ; altsyncram       ; work         ;
 ;             |altsyncram_nms1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 131072            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0|altsyncram_nms1:auto_generated                            ; altsyncram_nms1  ; work         ;
 ;       |ahb_switches:switches_1|              ; 11 (11)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_switches:switches_1                                                                         ; ahb_switches     ; work         ;
-;    |razzle:raz_inst|                         ; 60 (60)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|razzle:raz_inst                                                                                                  ; razzle           ; work         ;
+;    |razzle:raz_inst|                         ; 73 (73)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|razzle:raz_inst                                                                                                  ; razzle           ; work         ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                           ;
-+----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------------------------------------------+
-; Name                                                                                                     ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                                              ;
-+----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------------------------------------------+
-; arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_efn1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 307200       ; 1            ; 307200       ; 1            ; 307200 ; None                                             ;
-; arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0|altsyncram_nms1:auto_generated|ALTSYNCRAM         ; AUTO ; Simple Dual Port ; 4096         ; 32           ; 4096         ; 32           ; 131072 ; db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif ;
-+----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                    ;
++----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+-----------------------------------------------------------+
+; Name                                                                                                     ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                                                       ;
++----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+-----------------------------------------------------------+
+; arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_6ot1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 307200       ; 1            ; 307200       ; 1            ; 307200 ; db/de1_soc_wrapper.ram0_ahb_pixel_memory_4146d53f.hdl.mif ;
+; arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0|altsyncram_nms1:auto_generated|ALTSYNCRAM         ; AUTO ; Simple Dual Port ; 4096         ; 32           ; 4096         ; 32           ; 131072 ; db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif          ;
++----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+-----------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------+
@@ -473,22 +470,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
 ; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|data_to_memory[7]            ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|data_to_memory[13]           ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|data_to_memory[16]           ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|data_to_memory[31]           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|data_to_memory[8]            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|data_to_memory[21]           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|data_to_memory[28]           ;
 ; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|razzle:raz_inst|V_count                                     ;
 ; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[11] ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[29] ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[8]  ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[26] ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[9]  ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[24] ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[7]  ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[20] ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[6]  ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[16] ;
 ; 9:1                ; 2 bits    ; 12 LEs        ; 10 LEs               ; 2 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[1]  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
-; Source assignments for arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_efn1:auto_generated ;
+; Source assignments for arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_6ot1:auto_generated ;
 +---------------------------------+--------------------+------+--------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                     ;
 +---------------------------------+--------------------+------+--------------------------------------------------------+
@@ -527,62 +524,62 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +-----------------------------------------------------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0 ;
-+------------------------------------+----------------------+-----------------------------------------------------+
-; Parameter Name                     ; Value                ; Type                                                ;
-+------------------------------------+----------------------+-----------------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                             ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                          ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                        ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                        ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                      ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                                             ;
-; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                             ;
-; WIDTH_A                            ; 1                    ; Untyped                                             ;
-; WIDTHAD_A                          ; 19                   ; Untyped                                             ;
-; NUMWORDS_A                         ; 307200               ; Untyped                                             ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                             ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                             ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                             ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                             ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                                             ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                             ;
-; WIDTH_B                            ; 1                    ; Untyped                                             ;
-; WIDTHAD_B                          ; 19                   ; Untyped                                             ;
-; NUMWORDS_B                         ; 307200               ; Untyped                                             ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                                             ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                             ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                             ;
-; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                             ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                             ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                             ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                                             ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                             ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                             ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                             ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                             ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                             ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                             ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                             ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                             ;
-; BYTE_SIZE                          ; 8                    ; Untyped                                             ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                                             ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                             ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                             ;
-; INIT_FILE                          ; UNUSED               ; Untyped                                             ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                             ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                             ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                             ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                             ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                             ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                             ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                             ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                             ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                                             ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                             ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                             ;
-; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                             ;
-; CBXI_PARAMETER                     ; altsyncram_efn1      ; Untyped                                             ;
-+------------------------------------+----------------------+-----------------------------------------------------+
++------------------------------------+-----------------------------------------------------------+----------------+
+; Parameter Name                     ; Value                                                     ; Type           ;
++------------------------------------+-----------------------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                                         ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                                        ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                                       ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                                        ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                                       ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                                         ; Untyped        ;
+; OPERATION_MODE                     ; DUAL_PORT                                                 ; Untyped        ;
+; WIDTH_A                            ; 1                                                         ; Untyped        ;
+; WIDTHAD_A                          ; 19                                                        ; Untyped        ;
+; NUMWORDS_A                         ; 307200                                                    ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                              ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                                      ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                                      ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                                      ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                                      ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                                      ; Untyped        ;
+; WIDTH_B                            ; 1                                                         ; Untyped        ;
+; WIDTHAD_B                          ; 19                                                        ; Untyped        ;
+; NUMWORDS_B                         ; 307200                                                    ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                                    ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                                    ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                                    ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK0                                                    ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                              ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                                    ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                                      ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                                      ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                                      ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                                      ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                                      ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                                      ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                                         ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                                         ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                                      ; Untyped        ;
+; BYTE_SIZE                          ; 8                                                         ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                  ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                                      ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                                      ; Untyped        ;
+; INIT_FILE                          ; db/de1_soc_wrapper.ram0_ahb_pixel_memory_4146d53f.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                                    ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                                         ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                                    ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                                    ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                                    ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                                    ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                           ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                           ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                                     ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                                     ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                                         ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone V                                                 ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_6ot1                                           ; Untyped        ;
++------------------------------------+-----------------------------------------------------------+----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -678,15 +675,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+----------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "razzle:raz_inst"                                                                                                                               ;
-+-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                        ;
-+-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
-; pixel ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (10 bits) it drives.  Extra input bit(s) "pixel[9..1]" will be connected to GND. ;
-+-------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +-------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic"                                   ;
 +---------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -757,33 +745,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA CLR SCLR      ; 11                          ;
 ;     ENA CLR SCLR SLD  ; 11                          ;
 ;     plain             ; 6                           ;
-; arriav_lcell_comb     ; 3179                        ;
-;     arith             ; 173                         ;
-;         0 data inputs ; 1                           ;
+; arriav_lcell_comb     ; 3205                        ;
+;     arith             ; 193                         ;
+;         0 data inputs ; 3                           ;
 ;         1 data inputs ; 127                         ;
 ;         2 data inputs ; 12                          ;
-;         4 data inputs ; 2                           ;
-;         5 data inputs ; 31                          ;
+;         4 data inputs ; 11                          ;
+;         5 data inputs ; 40                          ;
 ;     extend            ; 36                          ;
 ;         7 data inputs ; 36                          ;
-;     normal            ; 2958                        ;
+;     normal            ; 2976                        ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 19                          ;
-;         2 data inputs ; 228                         ;
-;         3 data inputs ; 288                         ;
-;         4 data inputs ; 686                         ;
-;         5 data inputs ; 713                         ;
+;         2 data inputs ; 235                         ;
+;         3 data inputs ; 295                         ;
+;         4 data inputs ; 688                         ;
+;         5 data inputs ; 715                         ;
 ;         6 data inputs ; 1022                        ;
-;     shared            ; 12                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 8                           ;
-;         3 data inputs ; 1                           ;
 ; boundary_port         ; 81                          ;
 ; stratixv_ram_block    ; 70                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 14.00                       ;
-; Average LUT depth     ; 9.86                        ;
+; Average LUT depth     ; 9.84                        ;
 +-----------------------+-----------------------------+
 
 
@@ -802,7 +785,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.2 Build 203 01/18/2017 SJ Standard Edition
-    Info: Processing started: Thu Sep 24 12:51:14 2020
+    Info: Processing started: Thu Oct  1 13:33:27 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project24_09 -c de1_soc_wrapper
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
@@ -824,14 +807,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file behavio
     Info (12023): Found entity 1: cortexm0ds_logic File: /home/ks6n19/Documents/project/behavioural/cortexm0ds_logic.sv Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file behavioural/de1_soc_wrapper.sv
     Info (12023): Found entity 1: de1_soc_wrapper File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 8
-Warning (10236): Verilog HDL Implicit Net warning at razzle.sv(44): created implicit net for "Green_Data" File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 44
-Warning (10236): Verilog HDL Implicit Net warning at razzle.sv(45): created implicit net for "Blue_Data" File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 45
+Warning (10236): Verilog HDL Implicit Net warning at razzle.sv(43): created implicit net for "Green_Data" File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 43
+Warning (10236): Verilog HDL Implicit Net warning at razzle.sv(44): created implicit net for "Blue_Data" File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 44
 Info (12127): Elaborating entity "de1_soc_wrapper" for the top level hierarchy
 Warning (10230): Verilog HDL assignment warning at de1_soc_wrapper.sv(75): truncated value with size 32 to match size of target (26) File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 75
 Warning (10230): Verilog HDL assignment warning at de1_soc_wrapper.sv(87): truncated value with size 8 to match size of target (7) File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 87
 Warning (10034): Output port "LEDR" at de1_soc_wrapper.sv(15) has no driver File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 15
 Info (12128): Elaborating entity "arm_soc" for hierarchy "arm_soc:soc_inst" File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 42
-Info (12128): Elaborating entity "CORTEXM0DS" for hierarchy "arm_soc:soc_inst|CORTEXM0DS:m0_1" File: /home/ks6n19/Documents/project/behavioural/arm_soc.sv Line: 56
+Info (12128): Elaborating entity "CORTEXM0DS" for hierarchy "arm_soc:soc_inst|CORTEXM0DS:m0_1" File: /home/ks6n19/Documents/project/behavioural/arm_soc.sv Line: 58
 Warning (10036): Verilog HDL or VHDL warning at CORTEXM0DS.sv(76): object "cm0_msp" assigned a value but never read File: /home/ks6n19/Documents/project/behavioural/CORTEXM0DS.sv Line: 76
 Warning (10036): Verilog HDL or VHDL warning at CORTEXM0DS.sv(77): object "cm0_psp" assigned a value but never read File: /home/ks6n19/Documents/project/behavioural/CORTEXM0DS.sv Line: 77
 Warning (10036): Verilog HDL or VHDL warning at CORTEXM0DS.sv(79): object "cm0_pc" assigned a value but never read File: /home/ks6n19/Documents/project/behavioural/CORTEXM0DS.sv Line: 79
@@ -841,25 +824,23 @@ Warning (10036): Verilog HDL or VHDL warning at CORTEXM0DS.sv(82): object "cm0_p
 Info (12128): Elaborating entity "cortexm0ds_logic" for hierarchy "arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic" File: /home/ks6n19/Documents/project/behavioural/CORTEXM0DS.sv Line: 144
 Warning (10036): Verilog HDL or VHDL warning at cortexm0ds_logic.sv(1133): object "N4i2z4" assigned a value but never read File: /home/ks6n19/Documents/project/behavioural/cortexm0ds_logic.sv Line: 1133
 Warning (10036): Verilog HDL or VHDL warning at cortexm0ds_logic.sv(1133): object "L5i2z4" assigned a value but never read File: /home/ks6n19/Documents/project/behavioural/cortexm0ds_logic.sv Line: 1133
-Info (12128): Elaborating entity "ahb_interconnect" for hierarchy "arm_soc:soc_inst|ahb_interconnect:interconnect_1" File: /home/ks6n19/Documents/project/behavioural/arm_soc.sv Line: 68
+Info (12128): Elaborating entity "ahb_interconnect" for hierarchy "arm_soc:soc_inst|ahb_interconnect:interconnect_1" File: /home/ks6n19/Documents/project/behavioural/arm_soc.sv Line: 70
 Warning (10230): Verilog HDL assignment warning at ahb_interconnect.sv(39): truncated value with size 32 to match size of target (3) File: /home/ks6n19/Documents/project/behavioural/ahb_interconnect.sv Line: 39
 Warning (10230): Verilog HDL assignment warning at ahb_interconnect.sv(41): truncated value with size 32 to match size of target (3) File: /home/ks6n19/Documents/project/behavioural/ahb_interconnect.sv Line: 41
 Warning (10230): Verilog HDL assignment warning at ahb_interconnect.sv(43): truncated value with size 32 to match size of target (3) File: /home/ks6n19/Documents/project/behavioural/ahb_interconnect.sv Line: 43
-Info (12128): Elaborating entity "ahb_ram" for hierarchy "arm_soc:soc_inst|ahb_ram:ram_1" File: /home/ks6n19/Documents/project/behavioural/arm_soc.sv Line: 79
-Warning (10850): Verilog HDL warning at ahb_ram.sv(69): number of words (199) in memory file does not match the number of elements in the address range [0:4095] File: /home/ks6n19/Documents/project/behavioural/ahb_ram.sv Line: 69
-Info (12128): Elaborating entity "ahb_switches" for hierarchy "arm_soc:soc_inst|ahb_switches:switches_1" File: /home/ks6n19/Documents/project/behavioural/arm_soc.sv Line: 89
-Info (12128): Elaborating entity "ahb_pixel_memory" for hierarchy "arm_soc:soc_inst|ahb_pixel_memory:pix1" File: /home/ks6n19/Documents/project/behavioural/arm_soc.sv Line: 95
-Warning (10036): Verilog HDL or VHDL warning at ahb_pixel_memory.sv(62): object "read_enable" assigned a value but never read File: /home/ks6n19/Documents/project/behavioural/ahb_pixel_memory.sv Line: 62
-Warning (10230): Verilog HDL assignment warning at ahb_pixel_memory.sv(94): truncated value with size 32 to match size of target (1) File: /home/ks6n19/Documents/project/behavioural/ahb_pixel_memory.sv Line: 94
-Warning (10230): Verilog HDL assignment warning at ahb_pixel_memory.sv(98): truncated value with size 32 to match size of target (19) File: /home/ks6n19/Documents/project/behavioural/ahb_pixel_memory.sv Line: 98
+Info (12128): Elaborating entity "ahb_ram" for hierarchy "arm_soc:soc_inst|ahb_ram:ram_1" File: /home/ks6n19/Documents/project/behavioural/arm_soc.sv Line: 81
+Warning (10850): Verilog HDL warning at ahb_ram.sv(69): number of words (139) in memory file does not match the number of elements in the address range [0:4095] File: /home/ks6n19/Documents/project/behavioural/ahb_ram.sv Line: 69
+Info (12128): Elaborating entity "ahb_switches" for hierarchy "arm_soc:soc_inst|ahb_switches:switches_1" File: /home/ks6n19/Documents/project/behavioural/arm_soc.sv Line: 91
+Info (12128): Elaborating entity "ahb_pixel_memory" for hierarchy "arm_soc:soc_inst|ahb_pixel_memory:pix1" File: /home/ks6n19/Documents/project/behavioural/arm_soc.sv Line: 97
+Warning (10230): Verilog HDL assignment warning at ahb_pixel_memory.sv(93): truncated value with size 32 to match size of target (1) File: /home/ks6n19/Documents/project/behavioural/ahb_pixel_memory.sv Line: 93
+Warning (10230): Verilog HDL assignment warning at ahb_pixel_memory.sv(97): truncated value with size 32 to match size of target (19) File: /home/ks6n19/Documents/project/behavioural/ahb_pixel_memory.sv Line: 97
 Info (12128): Elaborating entity "razzle" for hierarchy "razzle:raz_inst" File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 49
+Warning (10230): Verilog HDL assignment warning at razzle.sv(33): truncated value with size 32 to match size of target (8) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 33
 Warning (10230): Verilog HDL assignment warning at razzle.sv(34): truncated value with size 32 to match size of target (8) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 34
 Warning (10230): Verilog HDL assignment warning at razzle.sv(35): truncated value with size 32 to match size of target (8) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 35
-Warning (10230): Verilog HDL assignment warning at razzle.sv(36): truncated value with size 32 to match size of target (8) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 36
-Warning (10230): Verilog HDL assignment warning at razzle.sv(43): truncated value with size 10 to match size of target (1) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 43
-Warning (10230): Verilog HDL assignment warning at razzle.sv(55): truncated value with size 11 to match size of target (10) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 55
-Warning (10230): Verilog HDL assignment warning at razzle.sv(56): truncated value with size 11 to match size of target (9) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 56
-Warning (10230): Verilog HDL assignment warning at razzle.sv(95): truncated value with size 32 to match size of target (11) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 95
+Warning (10230): Verilog HDL assignment warning at razzle.sv(54): truncated value with size 11 to match size of target (10) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 54
+Warning (10230): Verilog HDL assignment warning at razzle.sv(55): truncated value with size 11 to match size of target (9) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 55
+Warning (10230): Verilog HDL assignment warning at razzle.sv(94): truncated value with size 32 to match size of target (11) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 94
 Warning (10230): Verilog HDL assignment warning at razzle.sv(112): truncated value with size 32 to match size of target (11) File: /home/ks6n19/Documents/project/behavioural/razzle.sv Line: 112
 Info (19000): Inferred 2 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "arm_soc:soc_inst|ahb_pixel_memory:pix1|memory_rtl_0" 
@@ -877,6 +858,7 @@ Info (19000): Inferred 2 megafunctions from design logic
         Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/de1_soc_wrapper.ram0_ahb_pixel_memory_4146d53f.hdl.mif
         Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
     Info (276029): Inferred altsyncram megafunction from the following design logic: "arm_soc:soc_inst|ahb_ram:ram_1|memory_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
@@ -911,9 +893,10 @@ Info (12133): Instantiated megafunction "arm_soc:soc_inst|ahb_pixel_memory:pix1|
     Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/de1_soc_wrapper.ram0_ahb_pixel_memory_4146d53f.hdl.mif"
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_efn1.tdf
-    Info (12023): Found entity 1: altsyncram_efn1 File: /home/ks6n19/Documents/project/db/altsyncram_efn1.tdf Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_6ot1.tdf
+    Info (12023): Found entity 1: altsyncram_6ot1 File: /home/ks6n19/Documents/project/db/altsyncram_6ot1.tdf Line: 32
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_3na.tdf
     Info (12023): Found entity 1: decode_3na File: /home/ks6n19/Documents/project/db/decode_3na.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_chb.tdf
@@ -938,7 +921,6 @@ Info (12133): Instantiated megafunction "arm_soc:soc_inst|ahb_ram:ram_1|altsyncr
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_nms1.tdf
     Info (12023): Found entity 1: altsyncram_nms1 File: /home/ks6n19/Documents/project/db/altsyncram_nms1.tdf Line: 28
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 15
     Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 15
@@ -991,16 +973,16 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[3]" File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 13
-Info (21057): Implemented 3988 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4014 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 66 output pins
-    Info (21061): Implemented 3837 logic cells
+    Info (21061): Implemented 3863 logic cells
     Info (21064): Implemented 70 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 77 warnings
-    Info: Peak virtual memory: 1267 megabytes
-    Info: Processing ended: Thu Sep 24 12:51:41 2020
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 74 warnings
+    Info: Peak virtual memory: 1296 megabytes
+    Info: Processing ended: Thu Oct  1 13:33:54 2020
     Info: Elapsed time: 00:00:27
-    Info: Total CPU time (on all processors): 00:00:41
+    Info: Total CPU time (on all processors): 00:00:42
 
 
 +------------------------------------------+

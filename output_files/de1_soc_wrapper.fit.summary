@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Sep 24 12:53:37 2020
+Fitter Status : Successful - Thu Oct  1 13:35:55 2020
 Quartus Prime Version : 16.1.2 Build 203 01/18/2017 SJ Standard Edition
 Revision Name : de1_soc_wrapper
 Top-level Entity Name : de1_soc_wrapper
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 2,031 / 32,070 ( 6 % )
-Total registers : 1270
+Logic utilization (in ALMs) : 2,044 / 32,070 ( 6 % )
+Total registers : 1252
 Total pins : 81 / 457 ( 18 % )
 Total virtual pins : 0
 Total block memory bits : 438,272 / 4,065,280 ( 11 % )

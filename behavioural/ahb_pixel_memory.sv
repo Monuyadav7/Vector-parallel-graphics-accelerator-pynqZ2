@@ -38,8 +38,8 @@ module ahb_pixel_memory (
     input [31:0] HWDATA,
     
     // non ahb input 
-    input [9:0] pixel_x ,
-    input [8:0] pixel_y ,
+    input logic [9:0] pixel_x ,
+    input logic [8:0] pixel_y ,
     // Transfer Response & Read Data
     output HREADYOUT,
     output logic [31:0] HRDATA,
@@ -59,7 +59,7 @@ localparam No_Transfer = 2'b0;
   logic [0:0] memory [0:307199] ;
 
 // other declarations
-  logic write_enable, read_enable;
+  logic write_enable;
   logic [18:0] word_address;
   logic [18:0] pixel_address ;
 
@@ -69,23 +69,22 @@ always_ff @(posedge HCLK, negedge HRESETn)
     if (! HRESETn )
       begin
         write_enable <= '0;
-        read_enable <= '0;
         word_address <= '0;
       end
     else if ( HREADY && HSEL && (HTRANS != No_Transfer) )
       begin
         write_enable <= HWRITE;
-        read_enable <= ! HWRITE;
         word_address <= HADDR[20:2];
      end
     else
       begin
         write_enable <= '0;
-        read_enable <= '0;
         word_address <= '0;
      end
 
+initial 
 
+memory = '{307200{0}};
 
   //memory 
   always_ff @(posedge HCLK)
@@ -103,7 +102,6 @@ always_ff @(posedge HCLK, negedge HRESETn)
       pixel <= memory[pixel_address] ;
      end
      
-   //assign HRDATA = read_enable ? memory[word_address] : '0 ;   
    assign HRDATA = '0; // read is not permitted mode
    
     

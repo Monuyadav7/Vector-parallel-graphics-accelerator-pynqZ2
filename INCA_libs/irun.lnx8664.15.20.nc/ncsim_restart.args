@@ -2,19 +2,17 @@
 // File created by:  ncverilog
 // Do not modify this file
 //
-+libext+.sv
 +gui
 +ncaccess+r
-+tcl+testbench/arm_soc.tcl
++libext+.sv
 +define+prog_file=software/code.hex
 -gui
--INPUT
-testbench/arm_soc.tcl
+-TCL
 -MESSAGES
 +EMGRLOG
 ncverilog.log
 -XLSTIME
-1600358237
+1601555313
 -XLKEEP
 -XLMODE
 ./INCA_libs/irun.lnx8664.15.20.nc
@@ -28,4 +26,4 @@ ncverilog
 -XLVERSION
 "TOOL:	ncverilog	15.20-s058"
 -XLNAME
-./INCA_libs/irun.lnx8664.15.20.nc/srv02749_58829
+./INCA_libs/irun.lnx8664.15.20.nc/srv02749_91868

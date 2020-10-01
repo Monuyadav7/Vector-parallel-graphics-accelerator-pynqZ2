@@ -1,5 +1,5 @@
 Flow report for de1_soc_wrapper
-Thu Sep 24 12:54:06 2020
+Thu Oct  1 13:36:24 2020
 Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Standard Edition
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Thu Sep 24 12:54:06 2020           ;
+; Flow Status                     ; Successful - Thu Oct  1 13:36:24 2020           ;
 ; Quartus Prime Version           ; 16.1.2 Build 203 01/18/2017 SJ Standard Edition ;
 ; Revision Name                   ; de1_soc_wrapper                                 ;
 ; Top-level Entity Name           ; de1_soc_wrapper                                 ;
 ; Family                          ; Cyclone V                                       ;
 ; Device                          ; 5CSEMA5F31C6                                    ;
 ; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 2,031 / 32,070 ( 6 % )                          ;
-; Total registers                 ; 1270                                            ;
+; Logic utilization (in ALMs)     ; 2,044 / 32,070 ( 6 % )                          ;
+; Total registers                 ; 1252                                            ;
 ; Total pins                      ; 81 / 457 ( 18 % )                               ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 438,272 / 4,065,280 ( 11 % )                    ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/24/2020 12:51:15 ;
+; Start date & time ; 10/01/2020 13:33:28 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; de1_soc_wrapper     ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 345050572627.160094827563039           ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 345050572627.160155560834601           ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -97,12 +97,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:26     ; 1.0                     ; 1255 MB             ; 00:00:40                           ;
-; Fitter                    ; 00:01:56     ; 1.3                     ; 2658 MB             ; 00:10:59                           ;
-; Assembler                 ; 00:00:09     ; 1.0                     ; 1114 MB             ; 00:00:08                           ;
-; TimeQuest Timing Analyzer ; 00:00:11     ; 3.3                     ; 1572 MB             ; 00:00:29                           ;
-; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 1316 MB             ; 00:00:02                           ;
-; Total                     ; 00:02:45     ; --                      ; --                  ; 00:12:18                           ;
+; Analysis & Synthesis      ; 00:00:26     ; 1.0                     ; 1290 MB             ; 00:00:41                           ;
+; Fitter                    ; 00:02:00     ; 1.3                     ; 2653 MB             ; 00:11:25                           ;
+; Assembler                 ; 00:00:09     ; 1.0                     ; 1117 MB             ; 00:00:08                           ;
+; TimeQuest Timing Analyzer ; 00:00:11     ; 3.3                     ; 1564 MB             ; 00:00:29                           ;
+; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 1314 MB             ; 00:00:02                           ;
+; Total                     ; 00:02:49     ; --                      ; --                  ; 00:12:45                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

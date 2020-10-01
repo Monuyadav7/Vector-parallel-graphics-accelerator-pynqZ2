@@ -11,12 +11,13 @@ timeprecision 100ps;
   wire [6:0] HEX1;
   wire [6:0] HEX2;
   wire [6:0] HEX3;
-  
+ logic [7:0] VGA_R,VGA_G,VGA_B;
+  logic VGA_HS,VGA_VS, VGA_CLK, VGA_BLANK_N ;
   wire [2:0] KEY;
   
   assign KEY={nReset,~Buttons[1:0]}; // DE1-SoC keys are active low
 
-  de1_soc_wrapper dut(.CLOCK_50, .LEDR, .SW, .KEY, .HEX0, .HEX1, .HEX2, .HEX3);
+  de1_soc_wrapper dut(.CLOCK_50, .LEDR, .SW, .KEY, .HEX0, .HEX1, .HEX2, .HEX3,.VGA_R, .VGA_G, .VGA_B, .VGA_HS, .VGA_VS, .VGA_CLK, .VGA_BLANK_N);
 
   always
     begin
@@ -90,7 +91,7 @@ timeprecision 100ps;
       #5us press_button(0);
       #5us press_button(1);
 
-      #50us $stop;
+      #40ms $stop;
             $finish;
     end
        
