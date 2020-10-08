@@ -1,5 +1,5 @@
 Analysis & Synthesis report for de1_soc_wrapper
-Thu Oct  1 13:33:54 2020
+Thu Oct  8 16:44:05 2020
 Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Standard Edition
 
 
@@ -59,7 +59,7 @@ agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Oct  1 13:33:54 2020           ;
+; Analysis & Synthesis Status     ; Successful - Thu Oct  8 16:44:05 2020           ;
 ; Quartus Prime Version           ; 16.1.2 Build 203 01/18/2017 SJ Standard Edition ;
 ; Revision Name                   ; de1_soc_wrapper                                 ;
 ; Top-level Entity Name           ; de1_soc_wrapper                                 ;
@@ -174,7 +174,7 @@ agreement for further details.
 ; Number detected on machine ; 24          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
+; Average used               ; 1.00        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
@@ -189,8 +189,7 @@ agreement for further details.
 ;     Processor 9            ;   0.0%      ;
 ;     Processor 10           ;   0.0%      ;
 ;     Processor 11           ;   0.0%      ;
-;     Processor 12           ;   0.0%      ;
-;     Processors 13-16       ;   0.0%      ;
+;     Processors 12-16       ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -232,14 +231,14 @@ agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 2159           ;
+; Estimate of Logic utilization (ALMs needed) ; 2156           ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 3200           ;
+; Combinational ALUT usage for logic          ; 3194           ;
 ;     -- 7 input functions                    ; 36             ;
 ;     -- 6 input functions                    ; 1022           ;
-;     -- 5 input functions                    ; 755            ;
-;     -- 4 input functions                    ; 699            ;
-;     -- <=3 input functions                  ; 688            ;
+;     -- 5 input functions                    ; 746            ;
+;     -- 4 input functions                    ; 688            ;
+;     -- <=3 input functions                  ; 702            ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 950            ;
 ;                                             ;                ;
@@ -251,8 +250,8 @@ agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 1020           ;
-; Total fan-out                               ; 19937          ;
-; Average fan-out                             ; 4.55           ;
+; Total fan-out                               ; 19883          ;
+; Average fan-out                             ; 4.54           ;
 +---------------------------------------------+----------------+
 
 
@@ -261,7 +260,7 @@ agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                               ; Entity Name      ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
-; |de1_soc_wrapper                             ; 3200 (27)           ; 950 (28)                  ; 438272            ; 0          ; 81   ; 0            ; |de1_soc_wrapper                                                                                                                  ; de1_soc_wrapper  ; work         ;
+; |de1_soc_wrapper                             ; 3194 (27)           ; 950 (28)                  ; 438272            ; 0          ; 81   ; 0            ; |de1_soc_wrapper                                                                                                                  ; de1_soc_wrapper  ; work         ;
 ;    |arm_soc:soc_inst|                        ; 3100 (0)            ; 896 (0)                   ; 438272            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst                                                                                                 ; arm_soc          ; work         ;
 ;       |CORTEXM0DS:m0_1|                      ; 2912 (0)            ; 822 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|CORTEXM0DS:m0_1                                                                                 ; CORTEXM0DS       ; work         ;
 ;          |cortexm0ds_logic:u_logic|          ; 2912 (2912)         ; 822 (822)                 ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic                                                        ; cortexm0ds_logic ; work         ;
@@ -275,7 +274,7 @@ agreement for further details.
 ;          |altsyncram:memory_rtl_0|           ; 0 (0)               ; 0 (0)                     ; 131072            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0                                                           ; altsyncram       ; work         ;
 ;             |altsyncram_nms1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 131072            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0|altsyncram_nms1:auto_generated                            ; altsyncram_nms1  ; work         ;
 ;       |ahb_switches:switches_1|              ; 11 (11)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_switches:switches_1                                                                         ; ahb_switches     ; work         ;
-;    |razzle:raz_inst|                         ; 73 (73)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|razzle:raz_inst                                                                                                  ; razzle           ; work         ;
+;    |razzle:raz_inst|                         ; 67 (67)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|razzle:raz_inst                                                                                                  ; razzle           ; work         ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -745,21 +744,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA CLR SCLR      ; 11                          ;
 ;     ENA CLR SCLR SLD  ; 11                          ;
 ;     plain             ; 6                           ;
-; arriav_lcell_comb     ; 3205                        ;
+; arriav_lcell_comb     ; 3199                        ;
 ;     arith             ; 193                         ;
 ;         0 data inputs ; 3                           ;
 ;         1 data inputs ; 127                         ;
-;         2 data inputs ; 12                          ;
-;         4 data inputs ; 11                          ;
-;         5 data inputs ; 40                          ;
+;         2 data inputs ; 19                          ;
+;         3 data inputs ; 8                           ;
+;         4 data inputs ; 5                           ;
+;         5 data inputs ; 31                          ;
 ;     extend            ; 36                          ;
 ;         7 data inputs ; 36                          ;
-;     normal            ; 2976                        ;
+;     normal            ; 2970                        ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 19                          ;
 ;         2 data inputs ; 235                         ;
-;         3 data inputs ; 295                         ;
-;         4 data inputs ; 688                         ;
+;         3 data inputs ; 294                         ;
+;         4 data inputs ; 683                         ;
 ;         5 data inputs ; 715                         ;
 ;         6 data inputs ; 1022                        ;
 ; boundary_port         ; 81                          ;
@@ -785,7 +785,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.2 Build 203 01/18/2017 SJ Standard Edition
-    Info: Processing started: Thu Oct  1 13:33:27 2020
+    Info: Processing started: Thu Oct  8 16:43:38 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project24_09 -c de1_soc_wrapper
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
@@ -829,7 +829,7 @@ Warning (10230): Verilog HDL assignment warning at ahb_interconnect.sv(39): trun
 Warning (10230): Verilog HDL assignment warning at ahb_interconnect.sv(41): truncated value with size 32 to match size of target (3) File: /home/ks6n19/Documents/project/behavioural/ahb_interconnect.sv Line: 41
 Warning (10230): Verilog HDL assignment warning at ahb_interconnect.sv(43): truncated value with size 32 to match size of target (3) File: /home/ks6n19/Documents/project/behavioural/ahb_interconnect.sv Line: 43
 Info (12128): Elaborating entity "ahb_ram" for hierarchy "arm_soc:soc_inst|ahb_ram:ram_1" File: /home/ks6n19/Documents/project/behavioural/arm_soc.sv Line: 81
-Warning (10850): Verilog HDL warning at ahb_ram.sv(69): number of words (139) in memory file does not match the number of elements in the address range [0:4095] File: /home/ks6n19/Documents/project/behavioural/ahb_ram.sv Line: 69
+Warning (10850): Verilog HDL warning at ahb_ram.sv(69): number of words (228) in memory file does not match the number of elements in the address range [0:4095] File: /home/ks6n19/Documents/project/behavioural/ahb_ram.sv Line: 69
 Info (12128): Elaborating entity "ahb_switches" for hierarchy "arm_soc:soc_inst|ahb_switches:switches_1" File: /home/ks6n19/Documents/project/behavioural/arm_soc.sv Line: 91
 Info (12128): Elaborating entity "ahb_pixel_memory" for hierarchy "arm_soc:soc_inst|ahb_pixel_memory:pix1" File: /home/ks6n19/Documents/project/behavioural/arm_soc.sv Line: 97
 Warning (10230): Verilog HDL assignment warning at ahb_pixel_memory.sv(93): truncated value with size 32 to match size of target (1) File: /home/ks6n19/Documents/project/behavioural/ahb_pixel_memory.sv Line: 93
@@ -921,6 +921,8 @@ Info (12133): Instantiated megafunction "arm_soc:soc_inst|ahb_ram:ram_1|altsyncr
     Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_nms1.tdf
     Info (12023): Found entity 1: altsyncram_nms1 File: /home/ks6n19/Documents/project/db/altsyncram_nms1.tdf Line: 28
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/ks6n19/Documents/project/db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /srv/intelFPGA/16.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/ks6n19/Documents/project/db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /srv/intelFPGA/16.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 15
     Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 15
@@ -973,16 +975,16 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[3]" File: /home/ks6n19/Documents/project/behavioural/de1_soc_wrapper.sv Line: 13
-Info (21057): Implemented 4014 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4008 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 66 output pins
-    Info (21061): Implemented 3863 logic cells
+    Info (21061): Implemented 3857 logic cells
     Info (21064): Implemented 70 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 74 warnings
-    Info: Peak virtual memory: 1296 megabytes
-    Info: Processing ended: Thu Oct  1 13:33:54 2020
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 76 warnings
+    Info: Peak virtual memory: 1302 megabytes
+    Info: Processing ended: Thu Oct  8 16:44:05 2020
     Info: Elapsed time: 00:00:27
-    Info: Total CPU time (on all processors): 00:00:42
+    Info: Total CPU time (on all processors): 00:00:41
 
 
 +------------------------------------------+

@@ -194,3 +194,290 @@ can't read "state(state)": no such element in array
     invoked from within
 "namespace inscope ::MemViewer {::.memViewer0 _stateEventCB} event !state.kernel handle @public@7cb5 state idle kernel digital"
  
+*** Message Type: error ***
+When: Mon Oct 05 10:59:39 BST 2020
+can't read "state(state)": no such element in array
+can't read "state(state)": no such element in array
+    while executing
+"if { $state(state) == "running" } {
+           _clearValueChanges
+         }"
+    ("!state.kernel" arm line 6)
+    invoked from within
+"switch $info(event) {
+ !state.kernel {
+            # When we start running, clear the value change colors in
+      # the memory viewer widget, in preparation ..."
+    (object "::.memViewer0" method "::MemViewer::_stateEventCB" body line 7)
+    invoked from within
+"::.memViewer0 _stateEventCB event !state.kernel handle @public@dc62 state idle kernel digital"
+    (in namespace inscope "::MemViewer" script line 1)
+    invoked from within
+"namespace inscope ::MemViewer {::.memViewer0 _stateEventCB} event !state.kernel handle @public@dc62 state idle kernel digital"
+ 
+*** Message Type: error ***
+When: Mon Oct 05 11:04:31 BST 2020
+can't read "state(state)": no such element in array
+can't read "state(state)": no such element in array
+    while executing
+"if { $state(state) == "running" } {
+           _clearValueChanges
+         }"
+    ("!state.kernel" arm line 6)
+    invoked from within
+"switch $info(event) {
+ !state.kernel {
+            # When we start running, clear the value change colors in
+      # the memory viewer widget, in preparation ..."
+    (object "::.memViewer0" method "::MemViewer::_stateEventCB" body line 7)
+    invoked from within
+"::.memViewer0 _stateEventCB event !state.kernel handle @public@7cb5 state idle kernel digital"
+    (in namespace inscope "::MemViewer" script line 1)
+    invoked from within
+"namespace inscope ::MemViewer {::.memViewer0 _stateEventCB} event !state.kernel handle @public@7cb5 state idle kernel digital"
+ 
+*** Message Type: error ***
+When: Mon Oct 05 11:28:53 BST 2020
+can't read "state(state)": no such element in array
+can't read "state(state)": no such element in array
+    while executing
+"if { $state(state) == "running" } {
+           _clearValueChanges
+         }"
+    ("!state.kernel" arm line 6)
+    invoked from within
+"switch $info(event) {
+ !state.kernel {
+            # When we start running, clear the value change colors in
+      # the memory viewer widget, in preparation ..."
+    (object "::.memViewer0" method "::MemViewer::_stateEventCB" body line 7)
+    invoked from within
+"::.memViewer0 _stateEventCB event !state.kernel handle @public@e317 state idle kernel digital"
+    (in namespace inscope "::MemViewer" script line 1)
+    invoked from within
+"namespace inscope ::MemViewer {::.memViewer0 _stateEventCB} event !state.kernel handle @public@e317 state idle kernel digital"
+ 
+*** Message Type: error ***
+When: Mon Oct 05 12:09:06 BST 2020
+can't read "state(state)": no such element in array
+can't read "state(state)": no such element in array
+    while executing
+"if { $state(state) == "running" } {
+           _clearValueChanges
+         }"
+    ("!state.kernel" arm line 6)
+    invoked from within
+"switch $info(event) {
+ !state.kernel {
+            # When we start running, clear the value change colors in
+      # the memory viewer widget, in preparation ..."
+    (object "::.memViewer0" method "::MemViewer::_stateEventCB" body line 7)
+    invoked from within
+"::.memViewer0 _stateEventCB event !state.kernel handle @public@dc6d state idle kernel digital"
+    (in namespace inscope "::MemViewer" script line 1)
+    invoked from within
+"namespace inscope ::MemViewer {::.memViewer0 _stateEventCB} event !state.kernel handle @public@dc6d state idle kernel digital"
+ 
+*** Message Type: error ***
+When: Mon Oct 05 12:12:26 BST 2020
+can't read "state(state)": no such element in array
+can't read "state(state)": no such element in array
+    while executing
+"if { $state(state) == "running" } {
+           _clearValueChanges
+         }"
+    ("!state.kernel" arm line 6)
+    invoked from within
+"switch $info(event) {
+ !state.kernel {
+            # When we start running, clear the value change colors in
+      # the memory viewer widget, in preparation ..."
+    (object "::.memViewer0" method "::MemViewer::_stateEventCB" body line 7)
+    invoked from within
+"::.memViewer0 _stateEventCB event !state.kernel handle @public@e31b state idle kernel digital"
+    (in namespace inscope "::MemViewer" script line 1)
+    invoked from within
+"namespace inscope ::MemViewer {::.memViewer0 _stateEventCB} event !state.kernel handle @public@e31b state idle kernel digital"
+ 
+*** Message Type: error ***
+When: Mon Oct 05 12:41:53 BST 2020
+can't read "state(state)": no such element in array
+can't read "state(state)": no such element in array
+    while executing
+"if { $state(state) == "running" } {
+           _clearValueChanges
+         }"
+    ("!state.kernel" arm line 6)
+    invoked from within
+"switch $info(event) {
+ !state.kernel {
+            # When we start running, clear the value change colors in
+      # the memory viewer widget, in preparation ..."
+    (object "::.memViewer0" method "::MemViewer::_stateEventCB" body line 7)
+    invoked from within
+"::.memViewer0 _stateEventCB event !state.kernel handle @public@e327 state idle kernel digital"
+    (in namespace inscope "::MemViewer" script line 1)
+    invoked from within
+"namespace inscope ::MemViewer {::.memViewer0 _stateEventCB} event !state.kernel handle @public@e327 state idle kernel digital"
+ 
+*** Message Type: error ***
+When: Mon Oct 05 12:45:43 BST 2020
+can't read "state(state)": no such element in array
+can't read "state(state)": no such element in array
+    while executing
+"if { $state(state) == "running" } {
+           _clearValueChanges
+         }"
+    ("!state.kernel" arm line 6)
+    invoked from within
+"switch $info(event) {
+ !state.kernel {
+            # When we start running, clear the value change colors in
+      # the memory viewer widget, in preparation ..."
+    (object "::.memViewer0" method "::MemViewer::_stateEventCB" body line 7)
+    invoked from within
+"::.memViewer0 _stateEventCB event !state.kernel handle @public@e333 state idle kernel digital"
+    (in namespace inscope "::MemViewer" script line 1)
+    invoked from within
+"namespace inscope ::MemViewer {::.memViewer0 _stateEventCB} event !state.kernel handle @public@e333 state idle kernel digital"
+ 
+*** Message Type: error ***
+When: Mon Oct 05 12:55:29 BST 2020
+can't read "state(state)": no such element in array
+can't read "state(state)": no such element in array
+    while executing
+"if { $state(state) == "running" } {
+           _clearValueChanges
+         }"
+    ("!state.kernel" arm line 6)
+    invoked from within
+"switch $info(event) {
+ !state.kernel {
+            # When we start running, clear the value change colors in
+      # the memory viewer widget, in preparation ..."
+    (object "::.memViewer0" method "::MemViewer::_stateEventCB" body line 7)
+    invoked from within
+"::.memViewer0 _stateEventCB event !state.kernel handle @public@e33f state idle kernel digital"
+    (in namespace inscope "::MemViewer" script line 1)
+    invoked from within
+"namespace inscope ::MemViewer {::.memViewer0 _stateEventCB} event !state.kernel handle @public@e33f state idle kernel digital"
+ 
+*** Message Type: error ***
+When: Mon Oct 05 12:59:14 BST 2020
+can't read "state(state)": no such element in array
+can't read "state(state)": no such element in array
+    while executing
+"if { $state(state) == "running" } {
+           _clearValueChanges
+         }"
+    ("!state.kernel" arm line 6)
+    invoked from within
+"switch $info(event) {
+ !state.kernel {
+            # When we start running, clear the value change colors in
+      # the memory viewer widget, in preparation ..."
+    (object "::.memViewer0" method "::MemViewer::_stateEventCB" body line 7)
+    invoked from within
+"::.memViewer0 _stateEventCB event !state.kernel handle @public@e345 state idle kernel digital"
+    (in namespace inscope "::MemViewer" script line 1)
+    invoked from within
+"namespace inscope ::MemViewer {::.memViewer0 _stateEventCB} event !state.kernel handle @public@e345 state idle kernel digital"
+ 
+*** Message Type: info ***
+When: Mon Oct 05 15:09:48 BST 2020
+Delete memviewer window: "Memory Viewer 6"
+ 
+*** Message Type: info ***
+When: Mon Oct 05 15:11:54 BST 2020
+Delete browser window: "Design Browser 1"
+ 
+*** Message Type: info ***
+When: Mon Oct 05 15:12:52 BST 2020
+Create memviewer window: "Memory Viewer 2"
+ 
+*** Message Type: error ***
+When: Mon Oct 05 16:08:40 BST 2020
+can't read "state(state)": no such element in array
+can't read "state(state)": no such element in array
+    while executing
+"if { $state(state) == "running" } {
+           _clearValueChanges
+         }"
+    ("!state.kernel" arm line 6)
+    invoked from within
+"switch $info(event) {
+ !state.kernel {
+            # When we start running, clear the value change colors in
+      # the memory viewer widget, in preparation ..."
+    (object "::.memViewer1" method "::MemViewer::_stateEventCB" body line 7)
+    invoked from within
+"::.memViewer1 _stateEventCB event !state.kernel handle @public@11 state idle kernel digital"
+    (in namespace inscope "::MemViewer" script line 1)
+    invoked from within
+"namespace inscope ::MemViewer {::.memViewer1 _stateEventCB} event !state.kernel handle @public@11 state idle kernel digital"
+ 
+*** Message Type: error ***
+When: Mon Oct 05 16:20:44 BST 2020
+can't read "state(state)": no such element in array
+can't read "state(state)": no such element in array
+    while executing
+"if { $state(state) == "running" } {
+           _clearValueChanges
+         }"
+    ("!state.kernel" arm line 6)
+    invoked from within
+"switch $info(event) {
+ !state.kernel {
+            # When we start running, clear the value change colors in
+      # the memory viewer widget, in preparation ..."
+    (object "::.memViewer1" method "::MemViewer::_stateEventCB" body line 7)
+    invoked from within
+"::.memViewer1 _stateEventCB event !state.kernel handle @public@202 state idle kernel digital"
+    (in namespace inscope "::MemViewer" script line 1)
+    invoked from within
+"namespace inscope ::MemViewer {::.memViewer1 _stateEventCB} event !state.kernel handle @public@202 state idle kernel digital"
+ 
+*** Message Type: error ***
+When: Mon Oct 05 16:22:33 BST 2020
+can't read "state(state)": no such element in array
+can't read "state(state)": no such element in array
+    while executing
+"if { $state(state) == "running" } {
+           _clearValueChanges
+         }"
+    ("!state.kernel" arm line 6)
+    invoked from within
+"switch $info(event) {
+ !state.kernel {
+            # When we start running, clear the value change colors in
+      # the memory viewer widget, in preparation ..."
+    (object "::.memViewer1" method "::MemViewer::_stateEventCB" body line 7)
+    invoked from within
+"::.memViewer1 _stateEventCB event !state.kernel handle @public@10095 state idle kernel digital"
+    (in namespace inscope "::MemViewer" script line 1)
+    invoked from within
+"namespace inscope ::MemViewer {::.memViewer1 _stateEventCB} event !state.kernel handle @public@10095 state idle kernel digital"
+ 
+*** Message Type: info ***
+When: Mon Oct 05 16:39:47 BST 2020
+Exit NC-Sim: user
+      Design: worklib.de1_soc_wrapper_stim:sv
+   Languages: verilog
+   Simulator: NC-Sim
+     Version: TOOL:    ncsim(64)       15.20-s058
+        User: ks6n19
+        Host: srv02749.soton.ac.uk
+Time Started: Mon Oct 05 16:22:33 BST 2020
+  Process ID: 17656
+   Directory: /home/ks6n19/Documents/project
+     Command: ncverilog -sv +gui +ncaccess+r -y behavioural +libext+.sv +define+prog_file=software/code.hex testbench/de1_soc_wrapper_stim.sv -s
+
+ 
+*** Message Type: info ***
+When: Mon Oct 05 16:40:00 BST 2020
+Delete waveform window: "Waves for ARM SoC Example"
+ 
+*** Message Type: info ***
+When: Mon Oct 05 16:40:08 BST 2020
+SimVision Exit.
+ 

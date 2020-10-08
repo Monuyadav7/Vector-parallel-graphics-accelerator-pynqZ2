@@ -1,0 +1,13 @@
+//
+// File created by:  ncverilog
+// Do not modify this file
+//
+-sv
++gui
++ncaccess+r
+-y
+behavioural
++libext+.sv
++define+prog_file=software/code.hex
+testbench/de1_soc_wrapper_stim.sv
+-s

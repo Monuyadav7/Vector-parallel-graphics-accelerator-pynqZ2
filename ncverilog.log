@@ -1,5 +1,5 @@
 ncverilog(64): 15.20-s058: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
-TOOL:	ncverilog	15.20-s058: Started on Oct 01, 2020 at 13:28:33 BST
+TOOL:	ncverilog	15.20-s058: Started on Oct 08, 2020 at 16:21:39 BST
 ncverilog
 	-sv
 	+gui
@@ -10,38 +10,6 @@ ncverilog
 	+define+prog_file=software/code.hex
 	testbench/de1_soc_wrapper_stim.sv
 	-s
-Recompiling... reason: file './behavioural/razzle.sv' is newer than expected.
-	expected: Wed Sep 30 12:20:32 2020
-	actual:   Thu Oct  1 11:54:47 2020
-file: behavioural/razzle.sv
-	module behavioural.razzle:sv
-		errors: 0, warnings: 0
-		Caching library 'behavioural' ....... Done
-		Caching library 'worklib' ....... Done
-	Elaborating the design hierarchy:
-ncelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
-  de1_soc_wrapper dut(.CLOCK_50, .LEDR, .SW, .KEY, .HEX0, .HEX1, .HEX2, .HEX3,.VGA_R, .VGA_G, .VGA_B, .VGA_HS, .VGA_VS, .VGA_CLK, .VGA_BLANK_N);
-                                                |
-ncelab: *W,CUVMPW (./testbench/de1_soc_wrapper_stim.sv,20|48): port sizes differ in port connection (3/4).
-	Building instance overlay tables: .................... Done
-	Generating native compiled code:
-		behavioural.razzle:sv <0x627b90f6>
-			streams:  14, words:  6298
-	Building instance specific data structures.
-	Loading native compiled code:     .................... Done
-	Design hierarchy summary:
-		                   Instances  Unique
-		Modules:                  10      10
-		Registers:               919     919
-		Scalar wires:          11159       -
-		Expanded wires:          122       6
-		Vectored wires:           51       -
-		Always blocks:           858     858
-		Initial blocks:            3       3
-		Cont. assignments:       973   11132
-		Pseudo assignments:       22      22
-		Simulation timescale:  100ps
-	Writing initial simulation snapshot: worklib.de1_soc_wrapper_stim:sv
 ncsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 ncsim> 
 ncsim> source /eda/cadence/incisiv/tools/inca/files/ncsimrc
@@ -87,7 +55,5 @@ ncsim>
 ncsim> input -quiet .reinvoke.sim
 ncsim> file delete .reinvoke.sim
 ncsim> run
-Simulation interrupted at 30645785 NS + 5
-ncsim> run
-Simulation interrupted at 37091065 NS + 1
+Simulation interrupted at 35438205 NS + 5
 ncsim> 
