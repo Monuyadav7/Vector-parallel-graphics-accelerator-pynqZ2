@@ -1,9 +1,15 @@
 #define __MAIN_C__
 
 #include <stdint.h>
-#include <stdio.h>
-#include <stdbool.h>
-#include <math.h>
+
+
+// Define bool for MSVC boolean operation 
+#pragma once
+
+#define false   0
+#define true    1
+
+#define bool int
 
 // Define the raw base address values for the i/o devices
 
@@ -11,10 +17,9 @@
 #define AHB_PIX_BASE                            0x50000000
 
 // Define pointers with correct type for access to 32-bit i/o devices
-volatile uint32_t* SW_REGS = (volatile uint32_t*) AHB_SW_BASE;
-volatile uint32_t* PIX_REGS = (volatile uint32_t*) AHB_PIX_BASE;
+volatile uint16_t* SW_REGS = (volatile uint16_t*) AHB_SW_BASE;
+volatile uint16_t* PIX_REGS = (volatile uint16_t*) AHB_PIX_BASE;
 
-#include <stdint.h>
 
 /////////////////////////////////////////////////////////////////
 // Functions provided to access i/o devices
@@ -24,22 +29,16 @@ void write_pix( int p_x, int p_y, int colour) {
   int pix_address ;
   pix_address = p_x + 640*p_y ;
   PIX_REGS[pix_address] = colour;
-}
+  }
 
-bool PointinTriangle(int x1, int y1, int x2, int y2, int x3, int y3, int x, int y){
-  
-  int L1_detT   =   ((y2-y3)*(x-x3))+((x3-x2)*(y-y3)) ;
-  int L2_detT   =   ((y3-y1)*(x-x3))+((x1-x3)*(y-y3)) ;
-  int detT =   ((y2-y3)*(x1-x3))+((x3-x2)*(y1-y3)) ;
+// Read out (void) removed from the code because
+// functionality does not exist in main() 
 
-  if((L1_detT + L2_detT) > detT)
-    return true ;
-  else 
-    return false ;  
+/////////////////////////////////////////////////////////////////
+// Functions to interface with switches and buttons
+/////////////////////////////////////////////////////////////////
 
-}
-
-uint32_t read_switches(int addr) {
+uint16_t read_switches(int addr) {
 
   return SW_REGS[addr];
 
@@ -70,148 +69,57 @@ void wait_for_any_switch_data(void) {
   return;
 
 }
-
-
 //////////////////////////////////////////////////////////////////
 // Main Function
 //////////////////////////////////////////////////////////////////
 int main(void) {
-    
-    struct Screen screen;
-    screen.width = 640;
-    screen.height = 480;
-    
-    
-    Mole moles[9];
-    
-    
-    time_t seconds; 
-   
-    
-    int moleRadius = 50;
-    int spacing = 5;
-    int maxHeight = 90;
-    for (int i = 0; i< 9; i++){
-        int row = i/3;
-        int column = i%3;
-        
-        struct Mole m;
-        m.centerX  = (screen.width/2 - moleRadius*1.5) + row*(moleRadius+spacing);
-        m.centerY = (screen.height/2 - moleRadius*1.5) + row*(moleRadius+spacing);
-        m.radius = moleRadius;
-        
-        
-        moles[i] = m;
-    }
-    
-    
-    while(1){
-        
-        time(&seconds); 
-        for (int i = 0; i< 9; i++){
-            struct Mole m = moles[9];
-            physics(m, maxHeight, seconds)
-        }
-        
-        
-    }
-    
-    
-}
-    
-    
+
   
-
-
-void drawTriangle(int pos1, int pos2, int pos3){
+  
+while(1) {
+  int x1 ;
+  int y1 = 30;
+  
+ 
+  int x2 = 50;
+  int y2 = 300;
+  
+  int x3 = 500;
+  int y3 = 70;
+  
+  
+  int L1_detT ;
+  int L2_detT ;
+  int detT ;
+  
+  int L1_positive, L2_positive, L3_positive ;
+  
+   wait_for_any_switch_data();
     
-    
-    
-    
-}
-
-
-
-
-
-
-
-
-////////////////////////////
-///////// STRUCTURES ///////
-////////////////////////////
-
-struct Screen{
-    int width;
-    int hright;
-}
-
-
-
-struct Mole{
-    int centerX;
-    int centerY;
-    int radius = 30;
-    int height = 0;
-    int oldTime = 0;
-    m.state = random;
-}
-
-
-
-
-void drawCircle(int centerX, int centerY, int radius, int thicknessMax, float angleMax, int color){
-    for (int thickness = 0; thickness < thicknessMax; thickness++){
-      for (float angle = 0; angle < angleMax; angle++){
-             float posX = centerX + ((radius+thickness) *  cos(angle*PI/180.0));
-             float posY = centerY + ((radius+thickness) * sin(angle*PI/180));
-             write_px((int) posX, (int) posY, color);
-        }
+    if ( check_switches(0) ) {
+      x1 =  read_switches(0) ;
     }
-}
 
-void render(struct Mole mole, int color){
+    if ( check_switches(1) ) {
+      y1  = read_switches(1);
+    }  
+
+for (int x = 0 ; x < 640 ; x++){
+    for (int y = 0 ; y < 480 ; y++) {
     
-    drawCircle(mole.centerX, mole.centerY, mole.radius, 5, 360, 1);
-    
-    
-    int newR = mole.radius-5;
-    
-    for (int i = mole.height; i>=0; i--){
-        write_px((int) mole.centerX+newR, i + centerY, color)
-        write_px((int) mole.centerX-newR, i + centerY, color)   
-    }
-    
-    drawCircle(mole.centerX, mole.centerY + mole.height, newR, 1, 180, 1);
+	  L1_detT   =   ((y2-y3) *  (x-x3)) + ((x3-x2) *  (y-y3)) ;
+    L2_detT   =   ((y3-y1) *  (x-x3)) + ((x1-x3) *  (y-y3)) ;
+    detT  =   	 ((y2-y3) * (x1-x3)) + ((x3-x2) * (y1-y3)) ;
+	   
+    L1_positive = ((L1_detT >= 0) == (detT >= 0)) ;
+	  L2_positive = ((L2_detT >= 0) == (detT >= 0)) ;
+	  L3_positive = (((L1_detT + L2_detT) <= detT) == (detT >= 0)) ;
+	  
+	  
+	  if(L1_positive && L2_positive && L3_positive)
+        write_pix(x,y,1);
 
-    
-}
+  } }
 
-
-
-void physics(struct Mole m, int maxHeight, int time){
-    if (time-m.oldTime < 200)
-        return;
-    
-    if(m.height < maxHeight && m.state == 0){
-        m.height = m.height+1;
-    }else{
-        m.state = 1;
-    }
-    
-    if (m.height > 0 && m.state == 1){
-        m.height--;
-    }else{
-        m.state = 0;
-    }
-    
-    
-}
-
-
-
-
-
-
-
-
+ }
+}        
