@@ -1,0 +1,94 @@
+ncverilog(64): 15.20-s058: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+TOOL:	ncverilog	15.20-s058: Started on Oct 10, 2020 at 16:21:48 BST
+ncverilog
+	-sv
+	+gui
+	+ncaccess+r
+	-y
+	behavioural
+	+libext+.sv
+	+define+prog_file=software/code.hex
+	testbench/de1_soc_wrapper_stim.sv
+	-s
+		Caching library 'behavioural' ....... Done
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+ncelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+  de1_soc_wrapper dut(.CLOCK_50, .LEDR, .SW, .KEY, .HEX0, .HEX1, .HEX2, .HEX3,.VGA_R, .VGA_G, .VGA_B, .VGA_HS, .VGA_VS, .VGA_CLK, .VGA_BLANK_N);
+                                                |
+ncelab: *W,CUVMPW (./testbench/de1_soc_wrapper_stim.sv,20|48): port sizes differ in port connection (3/4).
+	Building instance overlay tables: .................... Done
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                  10      10
+		Registers:               919     919
+		Scalar wires:          11159       -
+		Expanded wires:          122       6
+		Vectored wires:           51       -
+		Always blocks:           858     858
+		Initial blocks:            3       3
+		Cont. assignments:       973   11132
+		Pseudo assignments:       22      22
+		Simulation timescale:  100ps
+	Writing initial simulation snapshot: worklib.de1_soc_wrapper_stim:sv
+ncsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+ncsim> 
+ncsim> source /eda/cadence/incisiv/tools/inca/files/ncsimrc
+ncsim> 
+-------------------------------------
+Relinquished control to SimVision...
+# Restoring simulation environment...
+ncsim> input {testbench/de0_wrapper.tcl}
+ncsim> # SimVision command script arm_soc.tcl
+ncsim> 
+ncsim> simvision {
+> 
+>   # Open new waveform window
+> 
+>     window new WaveWindow  -name  "Waves for ARM SoC Example"
+>     waveform  using  "Waves for ARM SoC Example"
+> 
+>   # Add Waves
+> 
+>     waveform  add  -signals  de1_soc_wrapper_stim.CLOCK_50
+>     waveform  add  -signals  de1_soc_wrapper_stim.KEY
+>     waveform  add  -signals  de1_soc_wrapper_stim.SW
+>     waveform  add  -signals  de1_soc_wrapper_stim.LEDR
+>     waveform  add  -signals  de1_soc_wrapper_stim.HEX0
+>     waveform  add  -signals  de1_soc_wrapper_stim.HEX1
+>     waveform  add  -signals  de1_soc_wrapper_stim.HEX2
+>     waveform  add  -signals  de1_soc_wrapper_stim.HEX3
+>     waveform  add  -signals  de1_soc_wrapper_stim.VGA_R
+>     waveform  add  -signals  de1_soc_wrapper_stim.VGA_G
+>     waveform  add  -signals  de1_soc_wrapper_stim.VGA_B
+>     waveform  add  -signals  de1_soc_wrapper_stim.VGA_HS
+>     waveform  add  -signals  de1_soc_wrapper_stim.VGA_VS
+>     waveform  add  -signals  de1_soc_wrapper_stim.VGA_CLK
+>     waveform  add  -signals  de1_soc_wrapper_stim.VGA_BLANK_N
+>     waveform  add  -signals  de1_soc_wrapper_stim.dut.soc_inst.HADDR
+>     waveform  add  -signals  de1_soc_wrapper_stim.dut.soc_inst.HWRITE
+>     waveform  add  -signals  de1_soc_wrapper_stim.dut.soc_inst.HSEL_RAM
+>     waveform  add  -signals  de1_soc_wrapper_stim.dut.soc_inst.HSEL_SW
+>     waveform  add  -signals  de1_soc_wrapper_stim.dut.soc_inst.HSEL_DOUT
+> 
+> }
+ncsim> 
+ncsim> input -quiet .reinvoke.sim
+ncsim> file delete .reinvoke.sim
+ncsim> run
+Simulation stopped via $stop(1) at time 40354010 NS + 0
+ncsim> run
+Simulation complete via $finish(1) at time 40354010 NS + 0
+./testbench/de1_soc_wrapper_stim.sv:95             $finish;
+ncsim> run
+ncsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+ncsim> run
+ncsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+ncsim> reset
+ncsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+Loaded snapshot worklib.de1_soc_wrapper_stim:sv
+ncsim> run
+Simulation stopped via $stop(1) at time 40354010 NS + 0
+ncsim> 

@@ -1,15 +1,8 @@
 #define __MAIN_C__
 
 #include <stdint.h>
+#include <stdbool.h>
 
-
-// Define bool for MSVC boolean operation 
-#pragma once
-
-#define false   0
-#define true    1
-
-#define bool int
 
 // Define the raw base address values for the i/o devices
 

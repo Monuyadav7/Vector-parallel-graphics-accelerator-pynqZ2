@@ -1,0 +1,10 @@
+# Restoring simulation environment...
+input {testbench/de0_wrapper.tcl}
+input -quiet .reinvoke.sim
+file delete .reinvoke.sim
+run
+run
+run
+run
+reset
+run

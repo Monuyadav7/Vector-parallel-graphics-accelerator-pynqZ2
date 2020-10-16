@@ -15,7 +15,7 @@ LOAD /srv/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-
 LOAD /srv/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc.a
 END GROUP
 
-.text           0x00000000      0x388
+.text           0x00000000      0x334
                 0x00000000                _stext = .
  CREATE_OBJECT_SYMBOLS
  *(.vectors)
@@ -51,86 +51,85 @@ END GROUP
                 0x00000148                PIO_2_IRQHandler
                 0x0000014c                PIO_1_IRQHandler
                 0x00000150                PIO_0_IRQHandler
- .text          0x00000154      0x234 ./code/main.o
+ .text          0x00000154      0x1e0 ./code/main.o
                 0x00000154                write_pix
-                0x00000188                PointinTriangle
-                0x0000020c                read_switches
-                0x00000228                check_switches
-                0x00000258                wait_for_any_switch_data
-                0x00000270                main
+                0x00000188                read_switches
+                0x000001a4                check_switches
+                0x000001d8                wait_for_any_switch_data
+                0x000001f0                main
  *(.text.*)
-                0x00000388                . = ALIGN (0x4)
+                0x00000334                . = ALIGN (0x4)
  *(.rodata)
  *(.rodata.*)
-                0x00000388                . = ALIGN (0x4)
-                0x00000388                _etext = .
+                0x00000334                . = ALIGN (0x4)
+                0x00000334                _etext = .
 
-.glue_7         0x00000388        0x0
- .glue_7        0x00000388        0x0 linker stubs
+.glue_7         0x00000334        0x0
+ .glue_7        0x00000334        0x0 linker stubs
 
-.glue_7t        0x00000388        0x0
- .glue_7t       0x00000388        0x0 linker stubs
+.glue_7t        0x00000334        0x0
+ .glue_7t       0x00000334        0x0 linker stubs
 
-.vfp11_veneer   0x00000388        0x0
- .vfp11_veneer  0x00000388        0x0 linker stubs
+.vfp11_veneer   0x00000334        0x0
+ .vfp11_veneer  0x00000334        0x0 linker stubs
 
-.v4_bx          0x00000388        0x0
- .v4_bx         0x00000388        0x0 linker stubs
+.v4_bx          0x00000334        0x0
+ .v4_bx         0x00000334        0x0 linker stubs
 
-.iplt           0x00000388        0x0
- .iplt          0x00000388        0x0 ./code/crt.o
+.iplt           0x00000334        0x0
+ .iplt          0x00000334        0x0 ./code/crt.o
 
-.rel.dyn        0x00000388        0x0
- .rel.iplt      0x00000388        0x0 ./code/crt.o
+.rel.dyn        0x00000334        0x0
+ .rel.iplt      0x00000334        0x0 ./code/crt.o
 
-.data           0x00000388        0x8
-                0x00000388                . = ALIGN (0x4)
-                0x00000388                _sdata = .
+.data           0x00000334        0x8
+                0x00000334                . = ALIGN (0x4)
+                0x00000334                _sdata = .
  *(.data)
- .data          0x00000388        0x0 ./code/crt.o
- .data          0x00000388        0x0 ./code/vectors_designstart.o
- .data          0x00000388        0x8 ./code/main.o
-                0x00000388                SW_REGS
-                0x0000038c                PIX_REGS
+ .data          0x00000334        0x0 ./code/crt.o
+ .data          0x00000334        0x0 ./code/vectors_designstart.o
+ .data          0x00000334        0x8 ./code/main.o
+                0x00000334                SW_REGS
+                0x00000338                PIX_REGS
  *(.data.*)
-                0x00000390                . = ALIGN (0x4)
+                0x0000033c                . = ALIGN (0x4)
  *(.fastrun)
  *(.fastrun.*)
-                0x00000390                . = ALIGN (0x4)
-                0x00000390                _edata = .
+                0x0000033c                . = ALIGN (0x4)
+                0x0000033c                _edata = .
 
-.igot.plt       0x00000390        0x0
- .igot.plt      0x00000390        0x0 ./code/crt.o
+.igot.plt       0x0000033c        0x0
+ .igot.plt      0x0000033c        0x0 ./code/crt.o
 
-.bss            0x00000390        0x0
-                0x00000390                . = ALIGN (0x4)
-                0x00000390                _sbss = .
+.bss            0x0000033c        0x0
+                0x0000033c                . = ALIGN (0x4)
+                0x0000033c                _sbss = .
  *(.bss)
- .bss           0x00000390        0x0 ./code/crt.o
- .bss           0x00000390        0x0 ./code/vectors_designstart.o
- .bss           0x00000390        0x0 ./code/main.o
+ .bss           0x0000033c        0x0 ./code/crt.o
+ .bss           0x0000033c        0x0 ./code/vectors_designstart.o
+ .bss           0x0000033c        0x0 ./code/main.o
  *(.bss.*)
-                0x00000390                . = ALIGN (0x4)
-                0x00000390                _ebss = .
+                0x0000033c                . = ALIGN (0x4)
+                0x0000033c                _ebss = .
                 0x00004000                _estack = (ORIGIN (RAM) + LENGTH (RAM))
 
 /DISCARD/
  *(.ARM.exidx*)
 OUTPUT(test_designstart.elf elf32-littlearm)
 
-.debug_info     0x00000000      0x6c1
+.debug_info     0x00000000      0x5ef
  .debug_info    0x00000000       0xcb ./code/crt.o
  .debug_info    0x000000cb      0x297 ./code/vectors_designstart.o
- .debug_info    0x00000362      0x35f ./code/main.o
+ .debug_info    0x00000362      0x28d ./code/main.o
 
 .debug_abbrev   0x00000000      0x203
  .debug_abbrev  0x00000000       0x7a ./code/crt.o
  .debug_abbrev  0x0000007a       0x82 ./code/vectors_designstart.o
  .debug_abbrev  0x000000fc      0x107 ./code/main.o
 
-.debug_loc      0x00000000       0xd9
+.debug_loc      0x00000000       0xb9
  .debug_loc     0x00000000       0x2c ./code/crt.o
- .debug_loc     0x0000002c       0xad ./code/main.o
+ .debug_loc     0x0000002c       0x8d ./code/main.o
 
 .debug_aranges  0x00000000       0x60
  .debug_aranges
@@ -140,18 +139,18 @@ OUTPUT(test_designstart.elf elf32-littlearm)
  .debug_aranges
                 0x00000040       0x20 ./code/main.o
 
-.debug_line     0x00000000      0x2fa
+.debug_line     0x00000000      0x2f8
  .debug_line    0x00000000       0xe1 ./code/crt.o
  .debug_line    0x000000e1       0xe6 ./code/vectors_designstart.o
- .debug_line    0x000001c7      0x133 ./code/main.o
+ .debug_line    0x000001c7      0x131 ./code/main.o
 
-.debug_str      0x00000000      0x3fd
+.debug_str      0x00000000      0x3e6
  .debug_str     0x00000000      0x131 ./code/crt.o
                                 0x16e (size before relaxing)
  .debug_str     0x00000131      0x1e0 ./code/vectors_designstart.o
                                 0x29e (size before relaxing)
- .debug_str     0x00000311       0xec ./code/main.o
-                                0x24a (size before relaxing)
+ .debug_str     0x00000311       0xd5 ./code/main.o
+                                0x213 (size before relaxing)
 
 .comment        0x00000000       0x6e
  .comment       0x00000000       0x6e ./code/crt.o
@@ -168,10 +167,10 @@ OUTPUT(test_designstart.elf elf32-littlearm)
  .ARM.attributes
                 0x00000062       0x31 ./code/main.o
 
-.debug_frame    0x00000000      0x268
+.debug_frame    0x00000000      0x254
  .debug_frame   0x00000000       0x2c ./code/crt.o
  .debug_frame   0x0000002c      0x1b0 ./code/vectors_designstart.o
- .debug_frame   0x000001dc       0x8c ./code/main.o
+ .debug_frame   0x000001dc       0x78 ./code/main.o
 
 Cross Reference Table
 
@@ -195,7 +194,6 @@ PIO_2_IRQHandler                                  ./code/vectors_designstart.o
 PIO_3_IRQHandler                                  ./code/vectors_designstart.o
 PIX_REGS                                          ./code/main.o
 PendSV_Handler                                    ./code/vectors_designstart.o
-PointinTriangle                                   ./code/main.o
 ResetHandler                                      ./code/crt.o
                                                   ./code/vectors_designstart.o
 SSP0_IRQHandler                                   ./code/vectors_designstart.o
