@@ -6,13 +6,13 @@
 ./INCA_libs/irun.lnx8664.15.20.nc
 -RUNMODE
 -sv
+testbench/de1_soc_wrapper_stim.sv
 -YDIR
 behavioural
 -LIBEXT
 .sv
 -DEFINE
 prog_file=software/code.hex
-testbench/de1_soc_wrapper_stim.sv
 -CDSLIB
 ./INCA_libs/irun.lnx8664.15.20.nc/cdsrun.lib
 -HDLVAR

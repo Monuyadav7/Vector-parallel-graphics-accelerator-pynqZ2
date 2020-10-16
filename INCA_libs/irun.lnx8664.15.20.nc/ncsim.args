@@ -2,17 +2,19 @@
 // File created by:  ncverilog
 // Do not modify this file
 //
++libext+.sv
 +gui
 +ncaccess+r
-+libext+.sv
++tcl+testbench/de0_wrapper.tcl
 +define+prog_file=software/code.hex
 -gui
--TCL
+-INPUT
+testbench/de0_wrapper.tcl
 -MESSAGES
 +EMGRLOG
 ncverilog.log
 -XLSTIME
-1602170499
+1602881682
 -XLKEEP
 -XLMODE
 ./INCA_libs/irun.lnx8664.15.20.nc

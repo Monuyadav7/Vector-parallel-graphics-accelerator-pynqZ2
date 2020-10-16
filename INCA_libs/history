@@ -171,3 +171,6 @@ s166::(07Oct2020:16:45:59):( ncverilog -sv +gui +ncaccess+r -y behavioural +libe
 s167::(07Oct2020:16:51:56):( ncverilog -sv +gui +ncaccess+r -y behavioural +libext+.sv +define+prog_file=software/code.hex testbench/de1_soc_wrapper_stim.sv -s )
 s168::(08Oct2020:15:46:51):( ncverilog -sv +gui +ncaccess+r -y behavioural +libext+.sv +define+prog_file=software/code.hex testbench/de1_soc_wrapper_stim.sv -s )
 s169::(08Oct2020:16:21:39):( ncverilog -sv +gui +ncaccess+r -y behavioural +libext+.sv +define+prog_file=software/code.hex testbench/de1_soc_wrapper_stim.sv -s )
+s170::(16Oct2020:21:52:43):( ncverilog -sv +gui +ncaccess+r +tcl+testbench/de0_wrapper.tcl -y behavioural +libext+.sv +define+prog_file=software/code.hex )
+s171::(16Oct2020:21:53:12):( ncverilog -sv +gui +ncaccess+r +tcl+testbench/de0_wrapper.tcl -y behavioural +libext+.sv +define+prog_file=software/code.hex )
+s172::(16Oct2020:21:54:42):( ncverilog -sv testbench/de1_soc_wrapper_stim.sv -y behavioural +libext+.sv +gui +ncaccess+r +tcl+testbench/de0_wrapper.tcl +define+prog_file=software/code.hex )
