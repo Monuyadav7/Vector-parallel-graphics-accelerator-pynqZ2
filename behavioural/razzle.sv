@@ -51,8 +51,8 @@ assign Blue =  Blue_Data && video_on;
 // video_on turns off pixel color data when not in the pixel view area 
 assign video_on = video_on_H && video_on_V; 
 
-assign pixel_x =video_on_H ? H_count : '0 ;
-assign pixel_y = video_on_V ? V_count : '0 ;
+assign pixel_x = video_on_H  ;
+assign pixel_y = video_on_V  ;
 
     
 // Generate Horizontal and Vertical Timing Signals for Video Signal 
