@@ -2,9 +2,10 @@
 // File created by:  ncverilog
 // Do not modify this file
 //
++libext+.sv
 +gui
 +ncaccess+r
-+libext+.sv
++tcl+testbench/de0_wrapper.tcl
 +define+prog_file=software/code.hex
 -noshowtop
 -ACCESS
