@@ -62,23 +62,27 @@ void wait_for_any_switch_data(void) {
   return;
 
 }
+
+
 //////////////////////////////////////////////////////////////////
 // Main Function
 //////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+// Anticlockwise ordering of coordinates
+//////////////////////////////////////////////////////////////////
 int main(void) {
 
-  
-  
-while(1) {
   int x1 = 0 ;
   int y1 = 0 ;
   
- 
   int x2 = 50;
   int y2 = 30;
   
   int x3 = 50;
-  int y3 = 70;
+  int y3 = 70; 
+  
+while(1) {
+
   
   
   int L1_detT ;
@@ -86,15 +90,41 @@ while(1) {
   int detT ;
   
   int L1_positive, L2_positive, L3_positive ;
+      wait_for_any_switch_data();
+    
+    if ( check_switches(0) ) {
+      x1 = x1 + read_switches(0);
+      y1 = y1 + read_switches(0);
+
+      x2 = x2 + read_switches(0);
+      y2 = y2 + read_switches(0);
+
+      x3 = x3 + read_switches(0);
+      y3 = y3 + read_switches(0);
+
+    }
+
+    if ( check_switches(1) ) {
+      x1 = x1 - read_switches(1);
+      y1 = y1 - read_switches(1);
+
+      x2 = x2 - read_switches(1);
+      y2 = y2 - read_switches(1);
+
+      x3 = x3 - read_switches(1);
+      y3 = y3 - read_switches(1);
+
+    }
+
   
 for (int x = 0 ; x < 640 ; x++){
     for (int y = 0 ; y < 480 ; y++) {
     
 	  L1_detT   =   ((y2-y3) *  (x-x3)) + ((x3-x2) *  (y-y3)) ;
 	  L2_detT   =   ((y3-y1) *  (x-x3)) + ((x1-x3) *  (y-y3)) ;
-   	  detT      =   ((y2-y3) * (x1-x3)) + ((x3-x2) * (y1-y3)) ;
+   	detT      =   ((y2-y3) * (x1-x3)) + ((x3-x2) * (y1-y3)) ;
 	   
-   	  L1_positive = ((L1_detT >= 0) == (detT >= 0)) ;
+   	L1_positive = ((L1_detT >= 0) == (detT >= 0)) ;
 	  L2_positive = ((L2_detT >= 0) == (detT >= 0)) ;
 	  L3_positive = (((L1_detT + L2_detT) <= detT) == (detT >= 0)) ;
 	  
