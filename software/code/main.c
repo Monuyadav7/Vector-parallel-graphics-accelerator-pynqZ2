@@ -71,6 +71,8 @@ void wait_for_any_switch_data(void) {
 // Anticlockwise ordering of coordinates
 //////////////////////////////////////////////////////////////////
 int main(void) {
+  
+while(1) {
 
   int x1 = 0 ;
   int y1 = 0 ;
@@ -80,10 +82,6 @@ int main(void) {
   
   int x3 = 500;
   int y3 = 70; 
-  
-while(1) {
-
-  
   
   int L1_detT ;
   int L2_detT ;
