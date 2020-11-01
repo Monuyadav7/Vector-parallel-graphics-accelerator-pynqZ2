@@ -76,9 +76,9 @@ int main(void) {
   int y1 = 0 ;
   
   int x2 = 50;
-  int y2 = 30;
+  int y2 = 300;
   
-  int x3 = 50;
+  int x3 = 500;
   int y3 = 70; 
   
 while(1) {
