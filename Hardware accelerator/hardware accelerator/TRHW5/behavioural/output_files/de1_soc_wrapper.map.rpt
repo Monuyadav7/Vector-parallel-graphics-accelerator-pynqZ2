@@ -1,0 +1,1623 @@
+Analysis & Synthesis report for de1_soc_wrapper
+Mon Dec 07 12:20:50 2020
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_efn1:auto_generated
+ 16. Source assignments for arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0|altsyncram_nms1:auto_generated
+ 17. Parameter Settings for User Entity Instance: arm_soc:soc_inst|ahb_interconnect:interconnect_1
+ 18. Parameter Settings for User Entity Instance: arm_soc:soc_inst|ahb_ram:ram_1
+ 19. Parameter Settings for Inferred Entity Instance: arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0
+ 20. Parameter Settings for Inferred Entity Instance: arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0
+ 21. altsyncram Parameter Settings by Entity Instance
+ 22. Port Connectivity Checks: "vga_interface:vga_interface_inst"
+ 23. Port Connectivity Checks: "arm_soc:soc_inst|ahb_hwa:hwa_1"
+ 24. Port Connectivity Checks: "arm_soc:soc_inst|ahb_pixel_memory:pix1"
+ 25. Port Connectivity Checks: "arm_soc:soc_inst|ahb_interconnect:interconnect_1"
+ 26. Port Connectivity Checks: "arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic"
+ 27. Port Connectivity Checks: "arm_soc:soc_inst|CORTEXM0DS:m0_1"
+ 28. Port Connectivity Checks: "arm_soc:soc_inst"
+ 29. Post-Synthesis Netlist Statistics for Top Partition
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
+ 32. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Dec 07 12:20:50 2020       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                   ; de1_soc_wrapper                             ;
+; Top-level Entity Name           ; de1_soc_wrapper                             ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 1313                                        ;
+; Total pins                      ; 81                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 438,272                                     ;
+; Total DSP Blocks                ; 12                                          ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; de1_soc_wrapper    ; de1_soc_wrapper    ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                   ;
++--------------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                 ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                                                      ; Library ;
++--------------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+---------+
+; vga_interface.sv                                 ; yes             ; User SystemVerilog HDL File                           ; C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/vga_interface.sv                                 ;         ;
+; de1_soc_wrapper.sv                               ; yes             ; User SystemVerilog HDL File                           ; C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv                               ;         ;
+; cortexm0ds_logic.sv                              ; yes             ; User SystemVerilog HDL File                           ; C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/cortexm0ds_logic.sv                              ;         ;
+; CORTEXM0DS.sv                                    ; yes             ; User SystemVerilog HDL File                           ; C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/CORTEXM0DS.sv                                    ;         ;
+; arm_soc.sv                                       ; yes             ; User SystemVerilog HDL File                           ; C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/arm_soc.sv                                       ;         ;
+; ahb_switches.sv                                  ; yes             ; User SystemVerilog HDL File                           ; C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/ahb_switches.sv                                  ;         ;
+; ahb_ram.sv                                       ; yes             ; User SystemVerilog HDL File                           ; C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/ahb_ram.sv                                       ;         ;
+; ahb_pixel_memory.sv                              ; yes             ; User SystemVerilog HDL File                           ; C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/ahb_pixel_memory.sv                              ;         ;
+; ahb_interconnect.sv                              ; yes             ; User SystemVerilog HDL File                           ; C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/ahb_interconnect.sv                              ;         ;
+; ahb_hwa.sv                                       ; yes             ; User SystemVerilog HDL File                           ; C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/ahb_hwa.sv                                       ;         ;
+; code.hex                                         ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/code.hex                                         ;         ;
+; altsyncram.tdf                                   ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                                                             ;         ;
+; stratix_ram_block.inc                            ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                      ;         ;
+; lpm_mux.inc                                      ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                                                                ;         ;
+; lpm_decode.inc                                   ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                                                             ;         ;
+; aglobal201.inc                                   ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                                             ;         ;
+; a_rdenreg.inc                                    ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                              ;         ;
+; altrom.inc                                       ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                                                                 ;         ;
+; altram.inc                                       ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                                                                 ;         ;
+; altdpram.inc                                     ; yes             ; Megafunction                                          ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                                                               ;         ;
+; db/altsyncram_efn1.tdf                           ; yes             ; Auto-Generated Megafunction                           ; C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/db/altsyncram_efn1.tdf                           ;         ;
+; db/decode_3na.tdf                                ; yes             ; Auto-Generated Megafunction                           ; C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/db/decode_3na.tdf                                ;         ;
+; db/mux_chb.tdf                                   ; yes             ; Auto-Generated Megafunction                           ; C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/db/mux_chb.tdf                                   ;         ;
+; db/altsyncram_nms1.tdf                           ; yes             ; Auto-Generated Megafunction                           ; C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/db/altsyncram_nms1.tdf                           ;         ;
+; db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif ;         ;
++--------------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 2408           ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 3685           ;
+;     -- 7 input functions                    ; 28             ;
+;     -- 6 input functions                    ; 1020           ;
+;     -- 5 input functions                    ; 765            ;
+;     -- 4 input functions                    ; 718            ;
+;     -- <=3 input functions                  ; 1154           ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 1313           ;
+;                                             ;                ;
+; I/O pins                                    ; 81             ;
+; Total MLAB memory bits                      ; 0              ;
+; Total block memory bits                     ; 438272         ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 12             ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 1383           ;
+; Total fan-out                               ; 23263          ;
+; Average fan-out                             ; 4.44           ;
++---------------------------------------------+----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                               ; Entity Name      ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+; |de1_soc_wrapper                             ; 3685 (27)           ; 1313 (28)                 ; 438272            ; 12         ; 81   ; 0            ; |de1_soc_wrapper                                                                                                                  ; de1_soc_wrapper  ; work         ;
+;    |arm_soc:soc_inst|                        ; 3591 (0)            ; 1259 (0)                  ; 438272            ; 12         ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst                                                                                                 ; arm_soc          ; work         ;
+;       |CORTEXM0DS:m0_1|                      ; 2931 (0)            ; 822 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|CORTEXM0DS:m0_1                                                                                 ; CORTEXM0DS       ; work         ;
+;          |cortexm0ds_logic:u_logic|          ; 2931 (2931)         ; 822 (822)                 ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic                                                        ; cortexm0ds_logic ; work         ;
+;       |ahb_hwa:hwa_1|                        ; 469 (469)           ; 362 (362)                 ; 0                 ; 12         ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_hwa:hwa_1                                                                                   ; ahb_hwa          ; work         ;
+;       |ahb_interconnect:interconnect_1|      ; 52 (52)             ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1                                                                 ; ahb_interconnect ; work         ;
+;       |ahb_pixel_memory:pix1|                ; 77 (21)             ; 26 (20)                   ; 307200            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1                                                                           ; ahb_pixel_memory ; work         ;
+;          |altsyncram:memory_rtl_0|           ; 56 (0)              ; 6 (0)                     ; 307200            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0                                                   ; altsyncram       ; work         ;
+;             |altsyncram_efn1:auto_generated| ; 56 (0)              ; 6 (6)                     ; 307200            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_efn1:auto_generated                    ; altsyncram_efn1  ; work         ;
+;                |decode_3na:decode2|          ; 45 (45)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_efn1:auto_generated|decode_3na:decode2 ; decode_3na       ; work         ;
+;                |mux_chb:mux3|                ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_efn1:auto_generated|mux_chb:mux3       ; mux_chb          ; work         ;
+;       |ahb_ram:ram_1|                        ; 51 (51)             ; 18 (18)                   ; 131072            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1                                                                                   ; ahb_ram          ; work         ;
+;          |altsyncram:memory_rtl_0|           ; 0 (0)               ; 0 (0)                     ; 131072            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0                                                           ; altsyncram       ; work         ;
+;             |altsyncram_nms1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 131072            ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0|altsyncram_nms1:auto_generated                            ; altsyncram_nms1  ; work         ;
+;       |ahb_switches:switches_1|              ; 11 (11)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_switches:switches_1                                                                         ; ahb_switches     ; work         ;
+;    |vga_interface:vga_interface_inst|        ; 67 (67)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |de1_soc_wrapper|vga_interface:vga_interface_inst                                                                                 ; vga_interface    ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                           ;
++----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------------------------------------------+
+; Name                                                                                                     ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                                              ;
++----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------------------------------------------+
+; arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_efn1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 307200       ; 1            ; 307200       ; 1            ; 307200 ; None                                             ;
+; arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0|altsyncram_nms1:auto_generated|ALTSYNCRAM         ; AUTO ; Simple Dual Port ; 4096         ; 32           ; 4096         ; 32           ; 131072 ; db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif ;
++----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------------------------------------------+
+
+
++-------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary    ;
++-----------------------------------+-------------+
+; Statistic                         ; Number Used ;
++-----------------------------------+-------------+
+; Two Independent 18x18             ; 6           ;
+; Sum of two 18x18                  ; 6           ;
+; Total number of DSP blocks        ; 12          ;
+;                                   ;             ;
+; Fixed Point Unsigned Multiplier   ; 6           ;
+; Fixed Point Mixed Sign Multiplier ; 12          ;
++-----------------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                        ;
++------------------------------------------------------------------+----------------------------------------+
+; Register name                                                    ; Reason for Removal                     ;
++------------------------------------------------------------------+----------------------------------------+
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[0][15]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[0][14]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[0][13]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[0][12]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[0][11]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[0][10]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[1][15]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[1][14]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[1][13]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[1][12]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[1][11]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|ahb_switches:switches_1|switch_store[1][10]     ; Stuck at GND due to stuck port data_in ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Zqb3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|E9c3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Yvb3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Qsb3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Rnb3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|W5c3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|O2c3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Gzb3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|C7f3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Q0f3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Qnn2z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Jje3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|W8r2z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Etq2z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Q4h3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|I6h3z4 ; Lost fanout                            ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Mvi2z4 ; Lost fanout                            ;
+; vga_interface:vga_interface_inst|clock_enable                    ; Merged with tick_count[0]              ;
+; Total Number of Removed Registers = 30                           ;                                        ;
++------------------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1313  ;
+; Number of registers using Synchronous Clear  ; 42    ;
+; Number of registers using Synchronous Load   ; 11    ;
+; Number of registers using Asynchronous Clear ; 1209  ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1042  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------+
+; Inverted Register Statistics                                               ;
++------------------------------------------------------------------+---------+
+; Inverted Register                                                ; Fan out ;
++------------------------------------------------------------------+---------+
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|O5t2z4 ; 124     ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|G0w2z4 ; 23      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|R1w2z4 ; 32      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|H9i2z4 ; 65      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Qdj2z4 ; 27      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|U2x2z4 ; 60      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Hyy2z4 ; 60      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Zoy2z4 ; 40      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Nqy2z4 ; 44      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Xly2z4 ; 16      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Lny2z4 ; 21      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Swy2z4 ; 70      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Qem2z4 ; 48      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Pty2z4 ; 44      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Dvy2z4 ; 53      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Bsy2z4 ; 51      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Viy2z4 ; 13      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Jky2z4 ; 22      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Yzi2z4 ; 15      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Rxl2z4 ; 14      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Omk2z4 ; 5       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|J0l2z4 ; 5       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Jux2z4 ; 5       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Vvx2z4 ; 5       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|W7z2z4 ; 8       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|K9z2z4 ; 7       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|I6z2z4 ; 10      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Cyq2z4 ; 22      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Auk2z4 ; 11      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|K1z2z4 ; 11      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|C3z2z4 ; 13      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|I2t2z4 ; 15      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|G9w2z4 ; 7       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|G7x2z4 ; 5       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Wai2z4 ; 16      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Igi2z4 ; 4       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Pdi2z4 ; 72      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Jw73z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|T1d3z4 ; 186     ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|H3d3z4 ; 188     ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Svk2z4 ; 206     ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Yaz2z4 ; 201     ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Art2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|J0v2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Kiq2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Ql13z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Gfq2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|I443z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Zu23z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Rd53z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Vgq2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Hak2z4 ; 4       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Skh3z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Djh3z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|M1j2z4 ; 53      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Hmh3z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Wnh3z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|An63z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Yx83z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Fgm2z4 ; 228     ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Wzy2z4 ; 239     ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Rni2z4 ; 229     ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Sjj2z4 ; 241     ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|S8k2z4 ; 4       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Fzl2z4 ; 17      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|U4z2z4 ; 4       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Qi03z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Ug63z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Fwj2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Txj2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Dq73z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Ruj2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Ukt2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Dtj2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Duu2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Wlz2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Cy33z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|L753z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Kf13z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|To23z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Iwp2z4 ; 4       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Qzq2z4 ; 20      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Zcn2z4 ; 15      ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Qz33z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Z853z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Yg13z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Hq23z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Ii63z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Skm2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Gmm2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Unm2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Rr73z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Imt2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Ejm2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Rvu2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Ek03z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Knz2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Kw63z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|E1r2z4 ; 2       ;
+; arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic|Ka93z4 ; 2       ;
+; Total number of inverted registers = 704*                        ;         ;
++------------------------------------------------------------------+---------+
+* Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                        ;
++--------------------------------------------------------+-----------------------------------------------------+------+
+; Register Name                                          ; Megafunction                                        ; Type ;
++--------------------------------------------------------+-----------------------------------------------------+------+
+; arm_soc:soc_inst|ahb_pixel_memory:pix1|pixel[0]        ; arm_soc:soc_inst|ahb_pixel_memory:pix1|memory_rtl_0 ; RAM  ;
+; arm_soc:soc_inst|ahb_ram:ram_1|data_from_memory[0..31] ; arm_soc:soc_inst|ahb_ram:ram_1|memory_rtl_0         ; RAM  ;
++--------------------------------------------------------+-----------------------------------------------------+------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|data_to_memory[2]                 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|data_to_memory[11]                ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|data_to_memory[23]                ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_ram:ram_1|data_to_memory[27]                ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|vga_interface:vga_interface_inst|V_count                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HSEL_SIGNALS[2] ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[15]      ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[26]      ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[9]       ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[25]      ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[3]       ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |de1_soc_wrapper|arm_soc:soc_inst|ahb_interconnect:interconnect_1|HRDATA[18]      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Source assignments for arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0|altsyncram_efn1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                     ;
++---------------------------------+--------------------+------+--------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                      ;
++---------------------------------+--------------------+------+--------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Source assignments for arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0|altsyncram_nms1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                             ;
++---------------------------------+--------------------+------+------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                              ;
++---------------------------------+--------------------+------+------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arm_soc:soc_inst|ahb_interconnect:interconnect_1 ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; num_slaves     ; 4     ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arm_soc:soc_inst|ahb_ram:ram_1 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; MEMWIDTH       ; 14    ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0 ;
++------------------------------------+----------------------+-----------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                ;
++------------------------------------+----------------------+-----------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                             ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                             ;
+; WIDTH_A                            ; 1                    ; Untyped                                             ;
+; WIDTHAD_A                          ; 19                   ; Untyped                                             ;
+; NUMWORDS_A                         ; 307200               ; Untyped                                             ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; WIDTH_B                            ; 1                    ; Untyped                                             ;
+; WIDTHAD_B                          ; 19                   ; Untyped                                             ;
+; NUMWORDS_B                         ; 307200               ; Untyped                                             ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                             ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                             ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                             ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                             ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                             ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                             ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                             ;
+; CBXI_PARAMETER                     ; altsyncram_efn1      ; Untyped                                             ;
++------------------------------------+----------------------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0 ;
++------------------------------------+--------------------------------------------------+-----------------+
+; Parameter Name                     ; Value                                            ; Type            ;
++------------------------------------+--------------------------------------------------+-----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                                ; Untyped         ;
+; AUTO_CARRY_CHAINS                  ; ON                                               ; AUTO_CARRY      ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                              ; IGNORE_CARRY    ;
+; AUTO_CASCADE_CHAINS                ; ON                                               ; AUTO_CASCADE    ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                              ; IGNORE_CASCADE  ;
+; WIDTH_BYTEENA                      ; 1                                                ; Untyped         ;
+; OPERATION_MODE                     ; DUAL_PORT                                        ; Untyped         ;
+; WIDTH_A                            ; 32                                               ; Untyped         ;
+; WIDTHAD_A                          ; 12                                               ; Untyped         ;
+; NUMWORDS_A                         ; 4096                                             ; Untyped         ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                     ; Untyped         ;
+; ADDRESS_ACLR_A                     ; NONE                                             ; Untyped         ;
+; OUTDATA_ACLR_A                     ; NONE                                             ; Untyped         ;
+; WRCONTROL_ACLR_A                   ; NONE                                             ; Untyped         ;
+; INDATA_ACLR_A                      ; NONE                                             ; Untyped         ;
+; BYTEENA_ACLR_A                     ; NONE                                             ; Untyped         ;
+; WIDTH_B                            ; 32                                               ; Untyped         ;
+; WIDTHAD_B                          ; 12                                               ; Untyped         ;
+; NUMWORDS_B                         ; 4096                                             ; Untyped         ;
+; INDATA_REG_B                       ; CLOCK1                                           ; Untyped         ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                           ; Untyped         ;
+; RDCONTROL_REG_B                    ; CLOCK1                                           ; Untyped         ;
+; ADDRESS_REG_B                      ; CLOCK0                                           ; Untyped         ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                     ; Untyped         ;
+; BYTEENA_REG_B                      ; CLOCK1                                           ; Untyped         ;
+; INDATA_ACLR_B                      ; NONE                                             ; Untyped         ;
+; WRCONTROL_ACLR_B                   ; NONE                                             ; Untyped         ;
+; ADDRESS_ACLR_B                     ; NONE                                             ; Untyped         ;
+; OUTDATA_ACLR_B                     ; NONE                                             ; Untyped         ;
+; RDCONTROL_ACLR_B                   ; NONE                                             ; Untyped         ;
+; BYTEENA_ACLR_B                     ; NONE                                             ; Untyped         ;
+; WIDTH_BYTEENA_A                    ; 1                                                ; Untyped         ;
+; WIDTH_BYTEENA_B                    ; 1                                                ; Untyped         ;
+; RAM_BLOCK_TYPE                     ; AUTO                                             ; Untyped         ;
+; BYTE_SIZE                          ; 8                                                ; Untyped         ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                         ; Untyped         ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                             ; Untyped         ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                             ; Untyped         ;
+; INIT_FILE                          ; db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif ; Untyped         ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                           ; Untyped         ;
+; MAXIMUM_DEPTH                      ; 0                                                ; Untyped         ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                           ; Untyped         ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                           ; Untyped         ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                           ; Untyped         ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                           ; Untyped         ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                  ; Untyped         ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                  ; Untyped         ;
+; ENABLE_ECC                         ; FALSE                                            ; Untyped         ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                            ; Untyped         ;
+; WIDTH_ECCSTATUS                    ; 3                                                ; Untyped         ;
+; DEVICE_FAMILY                      ; Cyclone V                                        ; Untyped         ;
+; CBXI_PARAMETER                     ; altsyncram_nms1                                  ; Untyped         ;
++------------------------------------+--------------------------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                           ;
++-------------------------------------------+----------------------------------------------------------------+
+; Name                                      ; Value                                                          ;
++-------------------------------------------+----------------------------------------------------------------+
+; Number of entity instances                ; 2                                                              ;
+; Entity Instance                           ; arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                      ;
+;     -- WIDTH_A                            ; 1                                                              ;
+;     -- NUMWORDS_A                         ; 307200                                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                   ;
+;     -- WIDTH_B                            ; 1                                                              ;
+;     -- NUMWORDS_B                         ; 307200                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                       ;
+; Entity Instance                           ; arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0         ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                      ;
+;     -- WIDTH_A                            ; 32                                                             ;
+;     -- NUMWORDS_A                         ; 4096                                                           ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                   ;
+;     -- WIDTH_B                            ; 32                                                             ;
+;     -- NUMWORDS_B                         ; 4096                                                           ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                       ;
++-------------------------------------------+----------------------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "vga_interface:vga_interface_inst" ;
++----------+-------+----------+--------------------------------+
+; Port     ; Type  ; Severity ; Details                        ;
++----------+-------+----------+--------------------------------+
+; pixel[1] ; Input ; Info     ; Stuck at GND                   ;
++----------+-------+----------+--------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "arm_soc:soc_inst|ahb_hwa:hwa_1"                                                              ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; HRDATA[31..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "arm_soc:soc_inst|ahb_pixel_memory:pix1"                                                 ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; pixel[1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "arm_soc:soc_inst|ahb_interconnect:interconnect_1" ;
++--------------------------+-------+----------+--------------------------------+
+; Port                     ; Type  ; Severity ; Details                        ;
++--------------------------+-------+----------+--------------------------------+
+; HRDATA_SIGNALS[3][31..1] ; Input ; Info     ; Stuck at GND                   ;
++--------------------------+-------+----------+--------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic"                                   ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; vis_r0_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r1_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r2_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r3_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r4_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r5_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r6_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r7_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r8_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r9_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r10_o     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r11_o     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r12_o     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_msp_o     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_psp_o     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_r14_o     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_pc_o      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_apsr_o    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_tbit_o    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_ipsr_o    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_control_o ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; vis_primask_o ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "arm_soc:soc_inst|CORTEXM0DS:m0_1"                                                          ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; HBURST      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; HMASTLOCK   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; HPROT       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; HRESP       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; NMI         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; IRQ         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; TXEV        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; RXEV        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; SYSRESETREQ ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; SLEEPING    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "arm_soc:soc_inst"       ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; Switches[15..10] ; Input ; Info     ; Stuck at GND ;
++------------------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 1313                        ;
+;     CLR               ; 245                         ;
+;     CLR SCLR          ; 20                          ;
+;     ENA               ; 98                          ;
+;     ENA CLR           ; 922                         ;
+;     ENA CLR SCLR      ; 11                          ;
+;     ENA CLR SCLR SLD  ; 11                          ;
+;     plain             ; 6                           ;
+; arriav_lcell_comb     ; 3690                        ;
+;     arith             ; 321                         ;
+;         0 data inputs ; 3                           ;
+;         1 data inputs ; 127                         ;
+;         2 data inputs ; 147                         ;
+;         3 data inputs ; 8                           ;
+;         4 data inputs ; 5                           ;
+;         5 data inputs ; 31                          ;
+;     extend            ; 28                          ;
+;         7 data inputs ; 28                          ;
+;     normal            ; 3075                        ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 64                          ;
+;         2 data inputs ; 242                         ;
+;         3 data inputs ; 300                         ;
+;         4 data inputs ; 713                         ;
+;         5 data inputs ; 734                         ;
+;         6 data inputs ; 1020                        ;
+;     shared            ; 266                         ;
+;         2 data inputs ; 224                         ;
+;         3 data inputs ; 42                          ;
+; arriav_mac            ; 12                          ;
+; boundary_port         ; 81                          ;
+; stratixv_ram_block    ; 70                          ;
+;                       ;                             ;
+; Max LUT depth         ; 14.00                       ;
+; Average LUT depth     ; 8.14                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:24     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Mon Dec 07 12:20:06 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TRHW5 -c de1_soc_wrapper
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file vga_interface.sv
+    Info (12023): Found entity 1: vga_interface File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/vga_interface.sv Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file de1_soc_wrapper.sv
+    Info (12023): Found entity 1: de1_soc_wrapper File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file cortexm0ds_logic.sv
+    Info (12023): Found entity 1: cortexm0ds_logic File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/cortexm0ds_logic.sv Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file cortexm0ds.sv
+    Info (12023): Found entity 1: CORTEXM0DS File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/CORTEXM0DS.sv Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file arm_soc.sv
+    Info (12023): Found entity 1: arm_soc File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/arm_soc.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file ahb_switches.sv
+    Info (12023): Found entity 1: ahb_switches File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/ahb_switches.sv Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file ahb_ram.sv
+    Info (12023): Found entity 1: ahb_ram File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/ahb_ram.sv Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file ahb_pixel_memory.sv
+    Info (12023): Found entity 1: ahb_pixel_memory File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/ahb_pixel_memory.sv Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file ahb_interconnect.sv
+    Info (12023): Found entity 1: ahb_interconnect File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/ahb_interconnect.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ahb_hwa.sv
+    Info (12023): Found entity 1: ahb_hwa File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/ahb_hwa.sv Line: 46
+Warning (10236): Verilog HDL Implicit Net warning at vga_interface.sv(42): created implicit net for "Red_Data" File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/vga_interface.sv Line: 42
+Warning (10236): Verilog HDL Implicit Net warning at vga_interface.sv(43): created implicit net for "Green_Data" File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/vga_interface.sv Line: 43
+Warning (10236): Verilog HDL Implicit Net warning at vga_interface.sv(44): created implicit net for "Blue_Data" File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/vga_interface.sv Line: 44
+Warning (10236): Verilog HDL Implicit Net warning at arm_soc.sv(66): created implicit net for "HSEL_HWA" File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/arm_soc.sv Line: 66
+Warning (10236): Verilog HDL Implicit Net warning at arm_soc.sv(67): created implicit net for "HRDATA_HWA" File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/arm_soc.sv Line: 67
+Warning (10236): Verilog HDL Implicit Net warning at arm_soc.sv(68): created implicit net for "HREADYOUT_HWA" File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/arm_soc.sv Line: 68
+Info (12127): Elaborating entity "de1_soc_wrapper" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at de1_soc_wrapper.sv(75): truncated value with size 32 to match size of target (26) File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 75
+Warning (10230): Verilog HDL assignment warning at de1_soc_wrapper.sv(87): truncated value with size 8 to match size of target (7) File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 87
+Warning (10034): Output port "LEDR" at de1_soc_wrapper.sv(15) has no driver File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 15
+Info (12128): Elaborating entity "arm_soc" for hierarchy "arm_soc:soc_inst" File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 42
+Info (12128): Elaborating entity "CORTEXM0DS" for hierarchy "arm_soc:soc_inst|CORTEXM0DS:m0_1" File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/arm_soc.sv Line: 58
+Warning (10036): Verilog HDL or VHDL warning at CORTEXM0DS.sv(76): object "cm0_msp" assigned a value but never read File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/CORTEXM0DS.sv Line: 76
+Warning (10036): Verilog HDL or VHDL warning at CORTEXM0DS.sv(77): object "cm0_psp" assigned a value but never read File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/CORTEXM0DS.sv Line: 77
+Warning (10036): Verilog HDL or VHDL warning at CORTEXM0DS.sv(79): object "cm0_pc" assigned a value but never read File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/CORTEXM0DS.sv Line: 79
+Warning (10036): Verilog HDL or VHDL warning at CORTEXM0DS.sv(80): object "cm0_xpsr" assigned a value but never read File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/CORTEXM0DS.sv Line: 80
+Warning (10036): Verilog HDL or VHDL warning at CORTEXM0DS.sv(81): object "cm0_control" assigned a value but never read File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/CORTEXM0DS.sv Line: 81
+Warning (10036): Verilog HDL or VHDL warning at CORTEXM0DS.sv(82): object "cm0_primask" assigned a value but never read File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/CORTEXM0DS.sv Line: 82
+Info (12128): Elaborating entity "cortexm0ds_logic" for hierarchy "arm_soc:soc_inst|CORTEXM0DS:m0_1|cortexm0ds_logic:u_logic" File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/CORTEXM0DS.sv Line: 144
+Warning (10036): Verilog HDL or VHDL warning at cortexm0ds_logic.sv(1133): object "N4i2z4" assigned a value but never read File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/cortexm0ds_logic.sv Line: 1133
+Warning (10036): Verilog HDL or VHDL warning at cortexm0ds_logic.sv(1133): object "L5i2z4" assigned a value but never read File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/cortexm0ds_logic.sv Line: 1133
+Info (12128): Elaborating entity "ahb_interconnect" for hierarchy "arm_soc:soc_inst|ahb_interconnect:interconnect_1" File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/arm_soc.sv Line: 70
+Warning (10230): Verilog HDL assignment warning at ahb_interconnect.sv(39): truncated value with size 32 to match size of target (4) File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/ahb_interconnect.sv Line: 39
+Warning (10230): Verilog HDL assignment warning at ahb_interconnect.sv(41): truncated value with size 32 to match size of target (4) File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/ahb_interconnect.sv Line: 41
+Warning (10230): Verilog HDL assignment warning at ahb_interconnect.sv(43): truncated value with size 32 to match size of target (4) File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/ahb_interconnect.sv Line: 43
+Warning (10230): Verilog HDL assignment warning at ahb_interconnect.sv(45): truncated value with size 32 to match size of target (4) File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/ahb_interconnect.sv Line: 45
+Info (12128): Elaborating entity "ahb_ram" for hierarchy "arm_soc:soc_inst|ahb_ram:ram_1" File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/arm_soc.sv Line: 81
+Warning (10850): Verilog HDL warning at ahb_ram.sv(69): number of words (328) in memory file does not match the number of elements in the address range [0:4095] File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/ahb_ram.sv Line: 69
+Info (12128): Elaborating entity "ahb_switches" for hierarchy "arm_soc:soc_inst|ahb_switches:switches_1" File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/arm_soc.sv Line: 91
+Info (12128): Elaborating entity "ahb_pixel_memory" for hierarchy "arm_soc:soc_inst|ahb_pixel_memory:pix1" File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/arm_soc.sv Line: 97
+Warning (10230): Verilog HDL assignment warning at ahb_pixel_memory.sv(93): truncated value with size 32 to match size of target (2) File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/ahb_pixel_memory.sv Line: 93
+Warning (10230): Verilog HDL assignment warning at ahb_pixel_memory.sv(97): truncated value with size 32 to match size of target (19) File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/ahb_pixel_memory.sv Line: 97
+Info (12128): Elaborating entity "ahb_hwa" for hierarchy "arm_soc:soc_inst|ahb_hwa:hwa_1" File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/arm_soc.sv Line: 103
+Info (12128): Elaborating entity "vga_interface" for hierarchy "vga_interface:vga_interface_inst" File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 49
+Warning (10230): Verilog HDL assignment warning at vga_interface.sv(33): truncated value with size 32 to match size of target (8) File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/vga_interface.sv Line: 33
+Warning (10230): Verilog HDL assignment warning at vga_interface.sv(34): truncated value with size 32 to match size of target (8) File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/vga_interface.sv Line: 34
+Warning (10230): Verilog HDL assignment warning at vga_interface.sv(35): truncated value with size 32 to match size of target (8) File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/vga_interface.sv Line: 35
+Warning (10230): Verilog HDL assignment warning at vga_interface.sv(43): truncated value with size 2 to match size of target (1) File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/vga_interface.sv Line: 43
+Warning (10230): Verilog HDL assignment warning at vga_interface.sv(55): truncated value with size 11 to match size of target (10) File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/vga_interface.sv Line: 55
+Warning (10230): Verilog HDL assignment warning at vga_interface.sv(56): truncated value with size 11 to match size of target (9) File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/vga_interface.sv Line: 56
+Warning (10230): Verilog HDL assignment warning at vga_interface.sv(95): truncated value with size 32 to match size of target (11) File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/vga_interface.sv Line: 95
+Warning (10230): Verilog HDL assignment warning at vga_interface.sv(113): truncated value with size 32 to match size of target (11) File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/vga_interface.sv Line: 113
+Info (19000): Inferred 2 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "arm_soc:soc_inst|ahb_pixel_memory:pix1|memory_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 1
+        Info (286033): Parameter WIDTHAD_A set to 19
+        Info (286033): Parameter NUMWORDS_A set to 307200
+        Info (286033): Parameter WIDTH_B set to 1
+        Info (286033): Parameter WIDTHAD_B set to 19
+        Info (286033): Parameter NUMWORDS_B set to 307200
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "arm_soc:soc_inst|ahb_ram:ram_1|memory_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 12
+        Info (286033): Parameter NUMWORDS_A set to 4096
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 12
+        Info (286033): Parameter NUMWORDS_B set to 4096
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+Info (12130): Elaborated megafunction instantiation "arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0"
+Info (12133): Instantiated megafunction "arm_soc:soc_inst|ahb_pixel_memory:pix1|altsyncram:memory_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "1"
+    Info (12134): Parameter "WIDTHAD_A" = "19"
+    Info (12134): Parameter "NUMWORDS_A" = "307200"
+    Info (12134): Parameter "WIDTH_B" = "1"
+    Info (12134): Parameter "WIDTHAD_B" = "19"
+    Info (12134): Parameter "NUMWORDS_B" = "307200"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_efn1.tdf
+    Info (12023): Found entity 1: altsyncram_efn1 File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/db/altsyncram_efn1.tdf Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_3na.tdf
+    Info (12023): Found entity 1: decode_3na File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/db/decode_3na.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_chb.tdf
+    Info (12023): Found entity 1: mux_chb File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/db/mux_chb.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0"
+Info (12133): Instantiated megafunction "arm_soc:soc_inst|ahb_ram:ram_1|altsyncram:memory_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "12"
+    Info (12134): Parameter "NUMWORDS_A" = "4096"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "12"
+    Info (12134): Parameter "NUMWORDS_B" = "4096"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/de1_soc_wrapper.ram0_ahb_ram_41fd0858.hdl.mif"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_nms1.tdf
+    Info (12023): Found entity 1: altsyncram_nms1 File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/db/altsyncram_nms1.tdf Line: 28
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 15
+    Warning (13410): Pin "HEX0[0]" is stuck at VCC File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 16
+    Warning (13410): Pin "HEX0[1]" is stuck at VCC File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 16
+    Warning (13410): Pin "HEX0[5]" is stuck at VCC File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 16
+    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 17
+    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 17
+    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 17
+    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 17
+    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 17
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 17
+    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 18
+    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 18
+    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 18
+    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 18
+    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 18
+    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 19
+    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 19
+    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 19
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 19
+    Warning (13410): Pin "VGA_R[0]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_R[1]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_R[2]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_R[3]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_R[4]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_R[5]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_R[6]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_R[7]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_B[4]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_B[5]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_B[6]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 20
+    Warning (13410): Pin "VGA_B[7]" is stuck at GND File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 20
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 17 registers lost all their fanouts during netlist optimizations.
+Warning (20013): Ignored 571 assignments for entity "DE1_SoC" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[10] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[11] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[12] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[13] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[14] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_BA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_BA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_BA[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_CAS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_CKE -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_CK_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_CK_P -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_CS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DM[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DM[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DM[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DM[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQS_N[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQS_N[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQS_N[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQS_N[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQS_P[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQS_P[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQS_P[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQS_P[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[10] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[11] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[12] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[13] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[14] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[15] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[16] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[17] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[18] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[19] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[20] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[21] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[22] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[23] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[24] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[25] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[26] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[27] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[28] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[29] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[30] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[31] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ODT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_RAS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_RESET_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_WE_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_CS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_DIN -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_DOUT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_SCLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_ADCDAT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_ADCLRCK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_BCLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_DACDAT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_DACLRCK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to AUD_XCK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK2_50 -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK3_50 -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK4_50 -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50 -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[10] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[11] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[12] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CAS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CKE -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[10] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[11] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[12] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[13] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[14] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[15] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_LDQM -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_RAS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_UDQM -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_WE_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FAN_CTRL -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FPGA_I2C_SCLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to FPGA_I2C_SDAT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[10] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[11] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[12] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[13] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[14] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[15] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[16] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[17] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[18] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[19] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[20] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[21] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[22] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[23] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[24] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[25] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[26] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[27] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[28] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[29] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[30] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[31] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[32] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[33] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[34] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[35] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[10] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[11] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[12] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[13] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[14] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[15] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[16] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[17] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[18] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[19] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[20] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[21] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[22] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[23] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[24] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[25] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[26] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[27] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[28] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[29] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[30] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[31] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[32] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[33] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[34] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[35] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_CONV_USB_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[10] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[11] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[12] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[13] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[14] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ADDR[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_BA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_BA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_BA[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_CAS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_CKE -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_CK_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_CK_P -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_CS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DM[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DM[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DM[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DM[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_N[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_N[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_N[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_N[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_P[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_P[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_P[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.5-V SSTL CLASS I" -to HPS_DDR3_DQS_P[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[10] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[11] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[12] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[13] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[14] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[15] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[16] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[17] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[18] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[19] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[20] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[21] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[22] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[23] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[24] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[25] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[26] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[27] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[28] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[29] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[30] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[31] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_DQ[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_ODT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_RAS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_RESET_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_RZQ -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "SSTL-15 CLASS I" -to HPS_DDR3_WE_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_GTX_CLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_INT_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_MDC -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_MDIO -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_RX_CLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_RX_DATA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_RX_DATA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_RX_DATA[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_RX_DATA[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_RX_DV -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_TX_DATA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_TX_DATA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_TX_DATA[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_TX_DATA[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_ENET_TX_EN -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_FLASH_DATA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_FLASH_DATA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_FLASH_DATA[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_FLASH_DATA[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_FLASH_DCLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_FLASH_NCSO -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_GPIO[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_GPIO[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_GSENSOR_INT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_I2C1_SCLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_I2C1_SDAT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_I2C2_SCLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_I2C2_SDAT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_I2C_CONTROL -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_KEY -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_LED -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_LTC_GPIO -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SD_CLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SD_CMD -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SD_DATA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SD_DATA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SD_DATA[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SD_DATA[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SPIM_CLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SPIM_MISO -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SPIM_MOSI -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_SPIM_SS -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_UART_RX -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_UART_TX -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_CLKOUT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DATA[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_DIR -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_NXT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HPS_USB_STP -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IRDA_RXD -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IRDA_TXD -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_CLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_CLK2 -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_DAT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_DAT2 -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_CLK27 -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_DATA[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_HS -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_RESET_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TD_VS -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_CLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_DATA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_DATA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_DATA[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_DATA[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_DATA[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_DATA[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_DATA[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_B2_DATA[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_EMPTY -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_FULL -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_OE_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_RD_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_RESET_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_SCL -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_SDA -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_WR_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_BLANK_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_B[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_CLK -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_G[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_HS -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_SYNC_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[10] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[11] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[12] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[13] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[14] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ADDR[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_BA[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_BA[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_BA[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_CAS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_CKE -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_CS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_ODT -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_RAS_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_RESET_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to HPS_DDR3_WE_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_N[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_N[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_N[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_N[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_P[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_P[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_P[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_P[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[10] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[11] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[12] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[13] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[14] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[15] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[16] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[17] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[18] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[19] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[20] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[21] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[22] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[23] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[24] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[25] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[26] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[27] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[28] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[29] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[30] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[31] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name INPUT_TERMINATION "PARALLEL 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITHOUT CALIBRATION" -to HPS_DDR3_CK_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITHOUT CALIBRATION" -to HPS_DDR3_CK_P -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_N[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_N[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_N[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_N[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_P[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_P[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_P[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQS_P[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[0] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[10] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[11] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[12] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[13] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[14] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[15] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[16] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[17] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[18] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[19] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[1] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[20] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[21] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[22] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[23] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[24] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[25] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[26] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[27] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[28] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[29] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[2] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[30] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[31] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[3] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[4] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[5] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[6] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[7] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[8] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[9] -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name D5_DELAY 2 -to HPS_DDR3_CK_N -entity DE1_SoC was ignored
+    Warning (20014): Assignment for entity set_instance_assignment -name D5_DELAY 2 -to HPS_DDR3_CK_P -entity DE1_SoC was ignored
+Info (144001): Generated suppressed messages file C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/output_files/de1_soc_wrapper.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 13
+Info (21057): Implemented 4725 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 66 output pins
+    Info (21061): Implemented 4562 logic cells
+    Info (21064): Implemented 70 RAM segments
+    Info (21062): Implemented 12 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 652 warnings
+    Info: Peak virtual memory: 4868 megabytes
+    Info: Processing ended: Mon Dec 07 12:20:50 2020
+    Info: Elapsed time: 00:00:44
+    Info: Total CPU time (on all processors): 00:01:04
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/output_files/de1_soc_wrapper.map.smsg.
+
+

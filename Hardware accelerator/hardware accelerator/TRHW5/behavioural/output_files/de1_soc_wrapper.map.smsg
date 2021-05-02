@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at de1_soc_wrapper.sv(64): always construct contains both blocking and non-blocking assignments File: C:/Users/ks6n1/OneDrive/Documents/project-small-right triangle/TRHW5/behavioural/de1_soc_wrapper.sv Line: 64
