@@ -1,0 +1,325 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Thu Mar 27 12:55:30 2025
+# Process ID: 10080
+# Current directory: C:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.runs/rasterizer_ee712_rgb2dvi_0_0_synth_1
+# Command line: vivado.exe -log rasterizer_ee712_rgb2dvi_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source rasterizer_ee712_rgb2dvi_0_0.tcl
+# Log file: C:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.runs/rasterizer_ee712_rgb2dvi_0_0_synth_1/rasterizer_ee712_rgb2dvi_0_0.vds
+# Journal file: C:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.runs/rasterizer_ee712_rgb2dvi_0_0_synth_1\vivado.jou
+# Running On: aicaslab10, OS: Windows, CPU Frequency: 3192 MHz, CPU Physical cores: 6, Host memory: 16966 MB
+#-----------------------------------------------------------
+source rasterizer_ee712_rgb2dvi_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 574.297 ; gain = 185.047
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/root/Downloads/rasterizer_ee712_project/vivado-library'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/root/Downloads/rasterizer_ee712_project/rast'.
+WARNING: [IP_Flow 19-3656] If you move the project, the path for repository 'c:/Users/root/Downloads/rasterizer_ee712_project/rast' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is 'c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.runs/rasterizer_ee712_rgb2dvi_0_0_synth_1'.)
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2023.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.cache/ip 
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: rasterizer_ee712_rgb2dvi_0_0
+Command: synth_design -top rasterizer_ee712_rgb2dvi_0_0 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9148
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:58 . Memory (MB): peak = 1456.848 ; gain = 438.688
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'rasterizer_ee712_rgb2dvi_0_0' [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ip/rasterizer_ee712_rgb2dvi_0_0/synth/rasterizer_ee712_rgb2dvi_0_0.vhd:71]
+	Parameter kGenerateSerialClk bound to: 1 - type: bool 
+	Parameter kClkPrimitive bound to: PLL - type: string 
+	Parameter kRstActiveHigh bound to: 1 - type: bool 
+	Parameter kClkRange bound to: 3 - type: integer 
+	Parameter kD0Swap bound to: 0 - type: bool 
+	Parameter kD1Swap bound to: 0 - type: bool 
+	Parameter kD2Swap bound to: 0 - type: bool 
+	Parameter kClkSwap bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'rgb2dvi' declared at 'c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/rgb2dvi.vhd:62' bound to instance 'U0' of component 'rgb2dvi' [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ip/rasterizer_ee712_rgb2dvi_0_0/synth/rasterizer_ee712_rgb2dvi_0_0.vhd:121]
+INFO: [Synth 8-638] synthesizing module 'rgb2dvi' [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/rgb2dvi.vhd:94]
+INFO: [Synth 8-638] synthesizing module 'ClockGen' [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/ClockGen.vhd:46]
+	Parameter kPolarity bound to: 1'b1 
+INFO: [Synth 8-3491] module 'ResetBridge' declared at 'c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/SyncAsyncReset.vhd:63' bound to instance 'LockLostReset' of component 'ResetBridge' [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/ClockGen.vhd:82]
+INFO: [Synth 8-638] synthesizing module 'ResetBridge' [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/SyncAsyncReset.vhd:72]
+INFO: [Synth 8-638] synthesizing module 'SyncAsync' [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/SyncAsync.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'SyncAsync' (0#1) [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/SyncAsync.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'ResetBridge' (0#1) [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/SyncAsyncReset.vhd:72]
+INFO: [Synth 8-3491] module 'SyncAsync' declared at 'c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/SyncAsync.vhd:61' bound to instance 'PLL_LockSyncAsync' of component 'SyncAsync' [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/ClockGen.vhd:90]
+INFO: [Synth 8-638] synthesizing module 'SyncAsync__parameterized1' [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/SyncAsync.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'SyncAsync__parameterized1' (0#1) [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/SyncAsync.vhd:72]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT bound to: 20 - type: integer 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKIN1_PERIOD bound to: 18.750000 - type: double 
+	Parameter CLKOUT0_DIVIDE bound to: 4 - type: integer 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_DIVIDE bound to: 20 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-113] binding component instance 'DVI_ClkGenerator' to cell 'PLLE2_ADV' [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/ClockGen.vhd:239]
+INFO: [Synth 8-256] done synthesizing module 'ClockGen' (0#1) [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/ClockGen.vhd:46]
+INFO: [Synth 8-638] synthesizing module 'OutputSERDES' [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/OutputSERDES.vhd:76]
+	Parameter IOSTANDARD bound to: TMDS_33 - type: string 
+INFO: [Synth 8-113] binding component instance 'OutputBuffer' to cell 'OBUFDS' [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/OutputSERDES.vhd:83]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: SDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'SerializerMaster' to cell 'OSERDESE2' [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/OutputSERDES.vhd:92]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: SDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter SERDES_MODE bound to: SLAVE - type: string 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'SerializerSlave' to cell 'OSERDESE2' [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/OutputSERDES.vhd:135]
+INFO: [Synth 8-256] done synthesizing module 'OutputSERDES' (0#1) [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/OutputSERDES.vhd:76]
+INFO: [Synth 8-638] synthesizing module 'TMDS_Encoder' [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/TMDS_Encoder.vhd:80]
+INFO: [Synth 8-256] done synthesizing module 'TMDS_Encoder' (0#1) [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/TMDS_Encoder.vhd:80]
+INFO: [Synth 8-256] done synthesizing module 'rgb2dvi' (0#1) [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/rgb2dvi.vhd:94]
+INFO: [Synth 8-256] done synthesizing module 'rasterizer_ee712_rgb2dvi_0_0' (0#1) [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ip/rasterizer_ee712_rgb2dvi_0_0/synth/rasterizer_ee712_rgb2dvi_0_0.vhd:71]
+WARNING: [Synth 8-6014] Unused sequential element pLockGained_reg was removed.  [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ipshared/d57c/src/ClockGen.vhd:102]
+WARNING: [Synth 8-7129] Port SerialClk in module TMDS_Encoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aRst in module TMDS_Encoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aRst_n in module rgb2dvi is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:01:07 . Memory (MB): peak = 1572.176 ; gain = 554.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:01:07 . Memory (MB): peak = 1572.176 ; gain = 554.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:01:07 . Memory (MB): peak = 1572.176 ; gain = 554.016
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1572.176 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ip/rasterizer_ee712_rgb2dvi_0_0/src/rgb2dvi_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ip/rasterizer_ee712_rgb2dvi_0_0/src/rgb2dvi_ooc.xdc] for cell 'U0'
+Parsing XDC File [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ip/rasterizer_ee712_rgb2dvi_0_0/src/rgb2dvi.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ip/rasterizer_ee712_rgb2dvi_0_0/src/rgb2dvi.xdc] for cell 'U0'
+Parsing XDC File [C:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.runs/rasterizer_ee712_rgb2dvi_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.runs/rasterizer_ee712_rgb2dvi_0_0_synth_1/dont_touch.xdc]
+Parsing XDC File [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ip/rasterizer_ee712_rgb2dvi_0_0/src/rgb2dvi_clocks.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.gen/sources_1/bd/rasterizer_ee712/ip/rasterizer_ee712_rgb2dvi_0_0/src/rgb2dvi_clocks.xdc] for cell 'U0'
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1670.383 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Timing 38-2] Deriving generated clocks
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:01 . Memory (MB): peak = 1670.383 ; gain = 0.000
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:26 ; elapsed = 00:01:30 . Memory (MB): peak = 1670.383 ; gain = 652.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:26 ; elapsed = 00:01:30 . Memory (MB): peak = 1670.383 ; gain = 652.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  C:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.runs/rasterizer_ee712_rgb2dvi_0_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:01:31 . Memory (MB): peak = 1670.383 ; gain = 652.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:27 ; elapsed = 00:01:31 . Memory (MB): peak = 1670.383 ; gain = 652.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input    5 Bit       Adders := 9     
+	   4 Input    5 Bit       Adders := 3     
+	   2 Input    5 Bit       Adders := 3     
+	   8 Input    4 Bit       Adders := 6     
+	   2 Input    4 Bit       Adders := 3     
++---XORs : 
+	   2 Input      1 Bit         XORs := 42    
++---Registers : 
+	               10 Bit    Registers := 3     
+	                9 Bit    Registers := 3     
+	                8 Bit    Registers := 3     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 9     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 19    
++---Muxes : 
+	   4 Input   10 Bit        Muxes := 3     
+	   2 Input    9 Bit        Muxes := 3     
+	   2 Input    5 Bit        Muxes := 9     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port aRst_n in module rgb2dvi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SerialClk in module rgb2dvi is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:01:51 . Memory (MB): peak = 1670.383 ; gain = 652.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:02:01 . Memory (MB): peak = 1670.383 ; gain = 652.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:02:02 . Memory (MB): peak = 1670.383 ; gain = 652.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:43 ; elapsed = 00:02:02 . Memory (MB): peak = 1670.383 ; gain = 652.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:51 ; elapsed = 00:02:10 . Memory (MB): peak = 1670.383 ; gain = 652.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:51 ; elapsed = 00:02:10 . Memory (MB): peak = 1670.383 ; gain = 652.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:51 ; elapsed = 00:02:10 . Memory (MB): peak = 1670.383 ; gain = 652.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:51 ; elapsed = 00:02:10 . Memory (MB): peak = 1670.383 ; gain = 652.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:51 ; elapsed = 00:02:10 . Memory (MB): peak = 1670.383 ; gain = 652.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:51 ; elapsed = 00:02:10 . Memory (MB): peak = 1670.383 ; gain = 652.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |LUT1      |     5|
+|2     |LUT2      |    22|
+|3     |LUT3      |    35|
+|4     |LUT4      |    23|
+|5     |LUT5      |    43|
+|6     |LUT6      |    72|
+|7     |OSERDESE2 |     8|
+|9     |PLLE2_ADV |     1|
+|10    |FDCE      |     3|
+|11    |FDPE      |     5|
+|12    |FDRE      |   119|
+|13    |FDSE      |    15|
+|14    |OBUFDS    |     4|
++------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:51 ; elapsed = 00:02:10 . Memory (MB): peak = 1670.383 ; gain = 652.223
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:02:02 . Memory (MB): peak = 1670.383 ; gain = 554.016
+Synthesis Optimization Complete : Time (s): cpu = 00:00:51 ; elapsed = 00:02:11 . Memory (MB): peak = 1670.383 ; gain = 652.223
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1670.383 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1670.383 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 4811887a
+INFO: [Common 17-83] Releasing license: Synthesis
+46 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:02:54 . Memory (MB): peak = 1670.383 ; gain = 1070.770
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.687 . Memory (MB): peak = 1670.383 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.runs/rasterizer_ee712_rgb2dvi_0_0_synth_1/rasterizer_ee712_rgb2dvi_0_0.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 1670.383 ; gain = 0.000
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP rasterizer_ee712_rgb2dvi_0_0, cache-ID = 0fe0111c3ba47041
+INFO: [Coretcl 2-1174] Renamed 14 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1670.383 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/root/Downloads/rasterizer_ee712_project/rasterizer_ee712_project.runs/rasterizer_ee712_rgb2dvi_0_0_synth_1/rasterizer_ee712_rgb2dvi_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file rasterizer_ee712_rgb2dvi_0_0_utilization_synth.rpt -pb rasterizer_ee712_rgb2dvi_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 27 12:59:30 2025...
